@@ -8,7 +8,7 @@
       <link href="/posts/20220617152203/"/>
       <url>/posts/20220617152203/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>从Linux系统上的C++程序如果编译开始，逐步转向并认识OpenFOAM的程序如果实现。</p></blockquote><h2 id="1-原生C-实现方式">1. 原生C++实现方式</h2>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>从Linux系统上的C++程序如果编译开始，逐步转向并认识OpenFOAM的程序如果实现。</p></blockquote><h2 id="原生C-实现方式">原生C++实现方式</h2>]]></content>
       
       
       <categories>
