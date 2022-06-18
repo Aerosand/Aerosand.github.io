@@ -1,0 +1,13 @@
+@font-face{
+    font-family: 'ShouXie';
+    font-display: swap;
+    src: url('../font/HuaKangShouXie.ttf') format("truetype");
+}
+@font-face{
+    font-family: 'monaco';
+    font-display: swap;
+    src: url('../font/Monaco.ttf') format("truetype");
+}
+body {
+    font-family: 'ShouXie','monaco';
+}

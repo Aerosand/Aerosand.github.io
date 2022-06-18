@@ -1,0 +1,608 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>《C++ How to Program》 07 指针 pointers | 𝓐𝓮𝓻𝓸𝓼𝓪𝓷𝓭</title><meta name="keywords" content="Pointer"><meta name="author" content="Aerosand,aerosand@outlook.com"><meta name="copyright" content="Aerosand"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍C++中最强大的指针">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《C++ How to Program》 07 指针 pointers">
+<meta property="og:url" content="https://aerosand.github.io/posts/20220413154214/index.html">
+<meta property="og:site_name" content="𝓐𝓮𝓻𝓸𝓼𝓪𝓷𝓭">
+<meta property="og:description" content="介绍C++中最强大的指针">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png">
+<meta property="article:published_time" content="2022-04-13T07:42:14.441Z">
+<meta property="article:modified_time" content="2022-04-30T01:57:40.237Z">
+<meta property="article:author" content="Aerosand">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="C++ How to Program">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png"><link rel="shortcut icon" href="https://dl2.img.timecdn.cn/2022/01/01/astrowalk.gif"><link rel="canonical" href="https://aerosand.github.io/posts/20220413154214/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《C++ How to Program》 07 指针 pointers',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-30 09:57:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_3113303_etsvbhnmj7r.css"><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://dl2.img.timecdn.cn/2022/01/01/astrowalk.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-feather-alt"></i><span> Alog</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/2022/"><i class="fa-fw fas fa-play"></i><span> 2022</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/Research/"><i class="fa-fw fas fa-atom"></i><span> Research</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fab fa-digital-ocean"></i><span> Mindself</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book-open"></i><span> Books</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> Games</span></a></li><li><a class="site-page child" href="/categories/%E6%9C%AD%E8%AE%B0/"><i class="fa-fw fas fa-cat"></i><span> 札记</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-th"></i><span> Scientech</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Blender/"><span> Blender</span></a></li><li><a class="site-page child" href="/categories/OpenFOAM/"><span> OpenFOAM</span></a></li><li><a class="site-page child" href="/categories/Cpp/"><span> Cpp</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Keyboard/"><span> Keyboard</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-dungeon"></i><span> 任意门</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw far fa-paper-plane"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-atlas"></i><span> 前往</span></a></li><li><a class="site-page child" href="/categories/Memo/"><i class="fa-fw fas fa-sticky-note"></i><span> 备忘</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/MessageBoard/"><i class="fa-fw far fa-comment-alt"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">𝓐𝓮𝓻𝓸𝓼𝓪𝓷𝓭</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-feather-alt"></i><span> Alog</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/2022/"><i class="fa-fw fas fa-play"></i><span> 2022</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/Research/"><i class="fa-fw fas fa-atom"></i><span> Research</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fab fa-digital-ocean"></i><span> Mindself</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movies</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book-open"></i><span> Books</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> Games</span></a></li><li><a class="site-page child" href="/categories/%E6%9C%AD%E8%AE%B0/"><i class="fa-fw fas fa-cat"></i><span> 札记</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-th"></i><span> Scientech</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Blender/"><span> Blender</span></a></li><li><a class="site-page child" href="/categories/OpenFOAM/"><span> OpenFOAM</span></a></li><li><a class="site-page child" href="/categories/Cpp/"><span> Cpp</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tasks"></i><span> 项目</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Keyboard/"><span> Keyboard</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-dungeon"></i><span> 任意门</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw far fa-paper-plane"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-atlas"></i><span> 前往</span></a></li><li><a class="site-page child" href="/categories/Memo/"><i class="fa-fw fas fa-sticky-note"></i><span> 备忘</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/MessageBoard/"><i class="fa-fw far fa-comment-alt"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《C++ How to Program》 07 指针 pointers</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-13T07:42:14.441Z" title="发表于 2022-04-13 15:42:14">2022-04-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-30T01:57:40.237Z" title="更新于 2022-04-30 09:57:40">2022-04-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Cpp/">Cpp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/20220413154214/#post-comment"><span class="waline-comment-count" data-path="/posts/20220413154214/"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-介绍">1. 介绍</h2>
+<p>通过这一篇的讨论，我们会知道什么时候使用指针，以及如何去使用指针。在前面的讨论中，我们了解并使用了引用和按引用传递。</p>
+<p>指针也使用按引用传递，可以被用来创建和操作动态数据结构，这些数据结构可以增长和收缩，例如链表、队列、堆栈和树。(Pointers also enables pass-by-reference and can be used to create and manipulate dynamic data structures that can grow and shrink, such as linked lists, queues, stacks and trees.) 这一篇先介绍一些关于指针的基础知识，后续文章会深入讨论指针强大的功能。</p>
+<p>我们还会展示 built-in arrays（继承自C语言） 和 pointers 的区别。从上一篇我们可以看到C++提供了更好用更强大的标准库类 array 和 vector 。同样的，C++也提供两种字符串的写法，一种是前面讨论过的 string 类对象的用法（C++），还有一种是继承自C语言的 pointer-based string （C string）。</p>
+<p>本次讨论将深入 C string，来帮助了解 pointers 和 built=in-arrays。 C string 广泛使用在过去的C和C++代码中。当然，我们现在更应该使用 array对象、vector对象，而不是 built-in-arrays，使用string对象而不是C string。</p>
+<p>经过本次的讨论，我们会在后面深入看到使用了指针和引用的多态处理的巨大用处（polymorphic processing associated with object-oriented programming with references and pointers）。</p>
+<h2 id="2-指针变量的声明和初始化">2. 指针变量的声明和初始化</h2>
+<p>指针变量的值就是指向的内存地址。一般来说，变量包含一个特定值，而指针就是指向这个值的内存地址。</p>
+<p>A variable name directly references a value, and a pointer indirectly references a value.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220413173050.png" alt=""></p>
+<h3 id="2-1-声明和初始化">2.1. 声明和初始化</h3>
+<ul>
+<li>指针的声明</li>
+</ul>
+<p>指针和其他的变量一样，必须在使用之前声明。</p>
+<p><code>int* countPtr, count;</code>  表示，<code>int*</code>类型的指针countPrt指向变量count。</p>
+<p>我们通常在变量的名字后加上 Ptr 来命名对应的指针。</p>
+<ul>
+<li>指针的初始化</li>
+</ul>
+<p>指针要么声明指向一个变量，要么声明成一个空指针(nullptr)。</p>
+<p>对声明的指针都进行初始化，以避免内存相关的错误。</p>
+<h3 id="2-2-指针操作符">2.2. 指针操作符</h3>
+<h4 id="2-2-1-地址操作符（-）">2.2.1. 地址操作符（&amp;）</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> y&#123;<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>* yPtr&#123;<span class="literal">nullptr</span>&#125;;</span><br><span class="line"></span><br><span class="line">yPtr = &amp;y;</span><br></pre></td></tr></table></figure>
+<p>上面代码中的最后一句就是给空指针 yPtr 赋值，使它等于 y 的内存地址，也就是 yPtr 指向 y 。下图展示了他们之间的关系。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220413175256.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220413175526.png" alt=""></p>
+<h4 id="2-2-2-间接运算符（-）（indirection-operator）">2.2.2. 间接运算符（*）（indirection operator）</h4>
+<p>又叫 的referencing operator，使用在指针变量前，返回指针指向地址的变量值。</p>
+<p>例如：</p>
+<p><code>cout &lt;&lt; *yPtr &lt;&lt; endl;</code> 和 <code>cout &lt;&lt; y &lt;&lt; endl;</code>是一样的结果，都返回 y 的值，也就是 5 。</p>
+<h4 id="2-2-3-代码示例">2.2.3. 代码示例</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_04.cpp</span></span><br><span class="line"><span class="comment">// Pointer operators &amp; and *</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a&#123;<span class="number">7</span>&#125;; </span><br><span class="line">    <span class="keyword">int</span>* aPtr = &amp;a;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The address of a is &quot;</span> &lt;&lt; &amp;a <span class="comment">// address</span></span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nThe value aPtr is &quot;</span> &lt;&lt; aPtr; <span class="comment">// address</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\n\nThe value of a is &quot;</span> &lt;&lt; a <span class="comment">// int value</span></span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nThe value of *aPtr is &quot;</span> &lt;&lt; *aPtr &lt;&lt; endl; <span class="comment">// int value</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>到目前为止遇到的所有操作符的优先级和结合性。如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220415135433.png" alt=""><br>
+<img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220415135757.png" alt=""></p>
+<h2 id="3-指针的按引用传递">3. 指针的按引用传递</h2>
+<p>在C++中一共有三种方式给函数传递参数：</p>
+<ul>
+<li>pass-by-value 按值传递</li>
+<li>pass-by-reference with a reference argument 通过参数引用的按引用传递</li>
+<li>pass-by-reference with a pointer argument 通过指针变量的按引用传递</li>
+</ul>
+<p>指针，就像一般引用一样，也可以在调用中实现对变量的修改，以及传递庞大的数据从而避免冗余的数据复制过程。</p>
+<p>对于上述的几种传递方式，我们分别看几个代码示例，通过比较来增加理解。</p>
+<p>首先看一下按值传递。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_06.cpp</span></span><br><span class="line"><span class="comment">// Pass-by-value used to cube a variable&#x27;s value</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cubeByValue</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number&#123;<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The original value of number is &quot;</span> &lt;&lt; number;</span><br><span class="line">    number = <span class="built_in">cubeByValue</span>(number);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\nThe new value of number is &quot;</span> &lt;&lt; number &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// calculate and return cube of integer argument</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cubeByValue</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n * n * n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>上述代码展示了简单的按值传递用法。</p>
+<p>下面看一个使用指针的按引用传递。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig 08_07.cpp</span></span><br><span class="line"><span class="comment">// Pass-by-reference with a pointer argument used to cube a </span></span><br><span class="line"><span class="comment">// variable&#x27;s value</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cubeByReference</span><span class="params">(<span class="keyword">int</span>*)</span></span>; <span class="comment">// prototype</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number&#123;<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The original value of number is &quot;</span> &lt;&lt; number;</span><br><span class="line">    <span class="built_in">cubeByReference</span>(&amp;number);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\nThe new value of number is &quot;</span> &lt;&lt; number &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// calculating cube of *nPtr; modifies variable number in main</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cubeByReference</span><span class="params">(<span class="keyword">int</span>* nPtr)</span> </span>&#123;</span><br><span class="line">    *nPtr = *nPtr * *nPtr * *nPtr; <span class="comment">// no need to return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>函数 cubeByReference() 接收的是 int 变量的地址，将地址存储在 nPtr 中，没有返回值。也就是说，通过指针传递变量给函数，对数据的修改无需返回，直接影响原来的数据上。指针变量和其他变量一样，在函数原型声明的参数聊表中，只需要表明类型，而不需要指明参数名称。（实际上，函数原型声明中的参数名称也只是起一种文本解释作用，在编译过程中会被编译器忽略。）</p>
+<p>Passing a variable by reference with a pointer does not actually pass anything by reference, a pointer to that variable is passed by value and is copied into the function’s corresponding pointer parameter. The called function can then access that variable in the caller simply by dereferencing the pointer, thus accomplishing pass-by-reference.</p>
+<p>我们图解上述程序中按值传递的过程。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220423085727.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220423090745.png" alt=""></p>
+<p>同样图解按引用传递的过程。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220423090642.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220423090658.png" alt=""></p>
+<h2 id="4-内置数组Built-in-Arrays">4. 内置数组Built-in Arrays</h2>
+<h3 id="4-1-声明和初始化">4.1. 声明和初始化</h3>
+<p>c语言格式的数组用法</p>
+<p><code>type arrayName[arraySize];</code></p>
+<p>对数组直接初始化，超出数量报错，不足数量默认为0.</p>
+<p><code>int n[5]&#123;50, 20, 30, 40, 10&#125;;</code></p>
+<p>或者根据提供的元素来决定数组大小。</p>
+<p><code>int n[]&#123;50, 20, 30, 40, 10&#125;;</code></p>
+<h3 id="4-2-传递给函数">4.2. 传递给函数</h3>
+<blockquote>
+<p>The value of a built-in array’s name is implicitly convertible to the address of the built-in array’s first element.</p>
+</blockquote>
+<p>数组的名字隐式的被转换为首个元素的地址，也就是</p>
+<blockquote>
+<p><code>arrayName</code> → <code>&amp;arrayName[0]</code></p>
+</blockquote>
+<p><strong>注意：</strong> 传递数组给函数直接输入数组的名字就行了，需要注意的是，函数内对数组的修改会直接对数组本身生效。一般来说，程序都使用<code>const</code>限定符来限制数组数据的修改，除非确实需要。</p>
+<p>我们可以直接在 function header 中声明 built-in array parameters</p>
+<p>例如：</p>
+<p><code>int sumElements(const int values[], const size_t numberOfElements)</code></p>
+<p>不同于 array objects, 这里的 built-in array 并不知道自己的大小，所以函数参数需要接受 array 以及 arraySize。</p>
+<p>也可以写成</p>
+<p><code>int sumElements(const int* values, const size_t numberOfElements)</code></p>
+<p>编译器并不区分 built-in 数组和指针，第一种形式会被编译器转成第二种形式一样处理，也就是说第二句中的 value 是指针，指针也就是数组变量中第一个元素的地址，这是一样的。</p>
+<p>虽然上述两种方式是可以互换的，但是在传递数组的时候，还是使用第一种方式表示它是 built-in array。</p>
+<h3 id="4-3-数组排序">4.3. 数组排序</h3>
+<p>和 array 对象的排序函数类似，built-in array 也可以使用排序函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sort array of array object</span></span><br><span class="line"><span class="built_in">sort</span>(colors.<span class="built_in">begin</span>(), colors.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">// sort contents of built-in array n</span></span><br><span class="line"><span class="built_in">sort</span>(<span class="built_in">begin</span>(n), <span class="built_in">end</span>(n));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>begin 和 end 函数的使用需要包含函数头<code>&lt;iterator&gt;</code>，接收 built-in array 作为函数参数，返回指针，represent ranges of elements 用来表示元素的范围。</p>
+<h3 id="4-4-built-in-array-的局限性和必要性">4.4. built-in array 的局限性和必要性</h3>
+<p>现代化的C++编程种，应该尽量的使用 array 对象 或者 vector 对象。</p>
+<p>内置数组有很多的局限性：</p>
+<ol>
+<li>不能直接使用关系符和等于号直接比较大小，而是需要元素之间逐个比较。</li>
+<li>之间不能互相赋值，此时数组名字只是一个常指针。</li>
+<li>内置数组不知道自己的大小，函数在处理它们时，分别需要数组的名字和数组的大小。</li>
+<li>不能提供边界检查，必须自己检查是否满足边界要求。</li>
+</ol>
+<p>但是在很多场合，内置数组还是需要的，比如在处理命令行参数的时候。</p>
+<h2 id="5-常指针的使用">5. 常指针的使用</h2>
+<p>在什么时候使用 const 来限定函数参数呢，我们参考 <strong>least privilege</strong>。也就是说，always give a function enough access to the data in its parameters to accomplish its specified task, but no more.</p>
+<blockquote>
+<p>Built-in arrays are always passed by reference and could easily be changed in the called function.</p>
+</blockquote>
+<p>const 和 指针 的搭配一共有四种情况，分别讨论如下。</p>
+<h3 id="5-1-Nonconstant-Pointer-to-Nonconstant-Data">5.1. Nonconstant Pointer to Nonconstant Data</h3>
+<p>Highest access is granted. 最高权限。</p>
+<p>The data can be modified through the dereferenced pointer, and the pointer can be modified to point to other data.</p>
+<h3 id="5-2-Nonconstant-Pointer-to-Constant-Data">5.2. Nonconstant Pointer to Constant Data</h3>
+<p>A pointer that can be modified to point to any data of the appropriate type, but the data to which it points cannot be modified through that pointer.</p>
+<p>指针可以修改为指向其他数据，但是这些数据不能通过指针来被修改。</p>
+<p>例如：</p>
+<p><code>const int* countPtr</code>: countPtr is a non-constant pointer to integer constant</p>
+<p><strong>注意：这种写法下，哪个是 constant，哪个是non-constant</strong></p>
+<p>以下代码演示了尝试修改 constant data 报错的情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_10.cpp</span></span><br><span class="line"><span class="comment">// Attempting to modify data through a non-constant pointer to constant data</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>*)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y&#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">f</span>(&amp;y); <span class="comment">// f will attempt an illegal modification</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// constant variable cannot be modified through xPtr</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>* xPtr)</span> </span>&#123;</span><br><span class="line">    *xPtr = <span class="number">100</span>; <span class="comment">// error: cannot modify a const data</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-Constant-Pointer-to-Nonconstant-Data">5.3. Constant Pointer to Nonconstant Data</h3>
+<p>A pointer always points to the same memory location, and the data at that location can be modified through the pointer.</p>
+<p>指针的指向固定的内存为止，但是被指向的数据可以通过指针来修改。</p>
+<p><strong>注意，一般来说，常指针在声明的同时就需要被初始化。但是作为函数的参数，指针随着传递给函数的同时初始化。</strong></p>
+<p><code>int* const ptr&#123;&amp;x&#125;;</code> 读作， ptr is a constant pointer to a nonconstant integer. The pointer is initialized with the address of integer variable x.</p>
+<p>通过一段代码来实际看一下结果。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_11.cpp</span></span><br><span class="line"><span class="comment">// Attempting to modify a constant pointer to nonconstant data.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ptr is a constant pointer to an integer that can be modified</span></span><br><span class="line">    <span class="comment">// through ptr, but ptr always points to the same memory location</span></span><br><span class="line">    <span class="keyword">int</span>* <span class="keyword">const</span> ptr&#123;&amp;x&#125;;</span><br><span class="line"></span><br><span class="line">    *ptr = <span class="number">7</span>; <span class="comment">// allowed: *ptr is not const</span></span><br><span class="line">    ptr = &amp;y; <span class="comment">// error: ptr is const; cannot assign to it a new address</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="5-4-Constant-Pointer-to-Constant-Data">5.4. Constant Pointer to Constant Data</h3>
+<p>Minimum access privilege is granted.</p>
+<p>Such a pointer always points to the same memory location, and the data at the location cannot be modified via pointer.</p>
+<p><strong>注意，this is how a built-in array should be passed to a function that only reads from the array, using array subscript notation,  and does not modify it.</strong></p>
+<p><code>const int* const ptr&#123;&amp;x&#125;;</code> 意思是：ptr is a constant pointer to an integer constant.</p>
+<p>通过以下代码更好的理解这种情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_12.cpp</span></span><br><span class="line"><span class="comment">// Attempting to modify a constant pointer to constant data.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x&#123;<span class="number">5</span>&#125;, y;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ptr is a constant pointer to a constant integer.</span></span><br><span class="line">    <span class="comment">// ptr always points to the same location</span></span><br><span class="line">    <span class="comment">// the integer at that location cannot be modified</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* <span class="keyword">const</span> ptr&#123;&amp;x&#125;;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; *ptr &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    *ptr = <span class="number">7</span>; <span class="comment">// error: *ptr is const, cannot assign new value</span></span><br><span class="line">    ptr = &amp;y; <span class="comment">// error: ptr is const, cannot assign new address</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="6-sizeof-Operator">6. sizeof Operator</h2>
+<p>通过代码示例了解 <code>sizeof</code> 的用法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig0813.cpp</span></span><br><span class="line"><span class="comment">// Sizeof operator when used on a built-in array&#x27;s name</span></span><br><span class="line"><span class="comment">// returns the number of bytes in the built-in array.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">getSize</span><span class="params">(<span class="keyword">double</span>*)</span></span>; <span class="comment">// prototype</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> numbers[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The number of bytes in the array is &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(numbers);</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\nThe number of bytes returned by getSize is &quot;</span> &lt;&lt; <span class="built_in">getSize</span>(numbers) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">size_t</span> <span class="title">getSize</span><span class="params">(<span class="keyword">double</span>* ptr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in"><span class="keyword">sizeof</span></span>(ptr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>sizeof(numbers)</code>
+<ul>
+<li>直接返回 built-in array 的总字节数</li>
+<li>单元素占8字节，一共20个元素，共占16[D:\Coding\Gitee\C++ How to Program 8th\chap8\0813_sizeof_1.cpp](file:///D:/Coding/Gitee/C++%20How%20to%20Program%208th/chap8/0813_sizeof_1.cpp)0个字节</li>
+<li>返回160</li>
+</ul>
+</li>
+<li><code>getSize(numbers)</code>
+<ul>
+<li>数组名字 numbers 是指向 数组第一个元素地址的指针</li>
+<li>该指针的类型占8字节</li>
+<li>返回8</li>
+</ul>
+</li>
+<li><code>sizeof numbers / sizeof(numbers[0])</code>
+<ul>
+<li>用来计算数组元素的个数</li>
+</ul>
+</li>
+</ul>
+<p>我们看另一个代码示例。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_14.cpp</span></span><br><span class="line"><span class="comment">// sizeof operator used to determine standard data type sizes.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="keyword">short</span> s;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">long</span> l;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">    <span class="keyword">float</span> f;</span><br><span class="line">    <span class="keyword">double</span> d;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line">    <span class="keyword">int</span> array[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">int</span>* ptr&#123;array&#125;;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;sizeof c = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> c &lt;&lt; <span class="string">&quot;\tsizeof(char) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">char</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof s = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> s &lt;&lt; <span class="string">&quot;\tsizeof(short) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">short</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof i = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> i &lt;&lt; <span class="string">&quot;\tsizeof(int) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof l = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> l &lt;&lt; <span class="string">&quot;\tsizeof(long) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">long</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof ll = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> ll &lt;&lt; <span class="string">&quot;\tsizeof(long long) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">long</span> <span class="keyword">long</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof f = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> f &lt;&lt; <span class="string">&quot;\tsizeof(float) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">float</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof d = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> d &lt;&lt; <span class="string">&quot;\tsizeof(double) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">double</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof ld = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> ld &lt;&lt; <span class="string">&quot;\tsizeof(long double) = &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">long</span> <span class="keyword">double</span>)</span><br><span class="line">        &lt;&lt; <span class="string">&quot;\nsizeof array = &quot;</span> &lt;&lt; <span class="keyword">sizeof</span> array &lt;&lt; &quot;\nsizeof ptr = &quot; &lt;&lt; <span class="keyword">sizeof</span> ptr &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>当 <code>sizeof</code> 使用在表达式上，可以不用加括号。</p>
+<h2 id="7-指针表达式和指针算数计算">7. 指针表达式和指针算数计算</h2>
+<p>下面两种语句是一样的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>* vPtr&#123;v&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>* vPtr&#123;&amp;v[<span class="number">0</span>]&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220427172126.png" alt=""></p>
+<p>Because a built-in array’s name implicitly converts to the address of it zeroth element.</p>
+<blockquote>
+<p>Pointer arithmetic is appropriate only for pointers that point to built-in array elements.</p>
+</blockquote>
+<h3 id="7-1-指针的加减法">7.1. 指针的加减法</h3>
+<p>指针加减法之后的值（地址）等于运算的整数乘以该数据类型的单位内存大小。</p>
+<p><code>vPtr += 2</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220427172643.png" alt=""></p>
+<p>increment： <code>++vPtr</code> 和 <code>vPtr++</code> 都是指向数组中的下一个元素。</p>
+<p>decrement： <code>--vPtr</code> 和 <code>vPtr--</code> 都是指向数组中的上一个元素。</p>
+<h3 id="7-2-指针的相减">7.2. 指针的相减</h3>
+<p>指向同一个 built-in array 的指针可以相减。</p>
+<p>如果 vPtr 指向地址 3000，v2Ptr 指向地址 3008，那么 <code>x = v2Ptr - vPtr</code> 等于从 vPtr 到 v2Ptr 之间的元素个数。</p>
+<p>比较指向不同内置数组的指针，会导致逻辑错误。</p>
+<h3 id="7-3-指针赋值和比较">7.3. 指针赋值和比较</h3>
+<p>如果两个指针是相同类型的，可以进行赋值操作。</p>
+<p>但是 <strong>void</strong> 是例外，任何类型的指针都可以分配给 void* 类型。</p>
+<blockquote>
+<p>A <code>void*</code> pointer cannot be dereferenced.</p>
+<p>Allowed operations only are:</p>
+<ul>
+<li>Comparing <code>void*</code> pointers with other pointers</li>
+<li>casting <code>void*</code> pointers to other pointers types</li>
+<li>assigning address to <code>void*</code> pointers</li>
+</ul>
+<p>All other operations on <code>void*</code> pointers are compilation errors.</p>
+</blockquote>
+<p>可以使用 equality operator 和 relational operator 进行指针比较（指向同一个 built-in array）</p>
+<p>常用的指针比较来发现一个指针是否是空指针（指针等于0，或者 null）。</p>
+<h2 id="8-Relationship-between-Pointers-and-Built-in-Arrays">8. Relationship between Pointers and Built-in Arrays</h2>
+<p>我们再深入讨论比较一下built-in array 和指针的区别</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b[ <span class="number">5</span> ]; <span class="comment">// create 5-elements int arary b; b is a const pointer</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>*bPtr&#123;b&#125;; <span class="comment">// set bPtr pointing to array b, same as following</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>* bPtr; <span class="comment">// create int pointer bPtr, which isnot a const pointer</span></span><br><span class="line">bPtr = b; <span class="comment">// assign address of built-in array b to bPtr</span></span><br><span class="line">bPtr = &amp;b[<span class="number">0</span>]; <span class="comment">// also assign address of built-in array b to bPtr</span></span><br><span class="line"></span><br><span class="line">b += <span class="number">3</span>; <span class="comment">// compilation error</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>数组的名字是指向第一个元素的常指针，我们也可以可以把 bPtr 设置成指向第一个元素。</li>
+<li>数组名相当于指向首元素的<strong>常指针</strong>，但是不能对它进行算数计算</li>
+</ul>
+<p>注意区别两种表示形式，一种是 pointer/offset notation，另一种是 pointer/subscript notation。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pointer/offset notation</span></span><br><span class="line">*(bPtr + <span class="number">3</span>) <span class="comment">// 3 is the offset to the pointer</span></span><br><span class="line">&amp;b[<span class="number">3</span>]</span><br><span class="line">bPtr + <span class="number">3</span> <span class="comment">// above two are the same</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// pointer/subscript notation</span></span><br><span class="line">bPtr[<span class="number">1</span>] <span class="comment">// refers to b[1]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>我们通过以下的代码示例说明我们提到的几种用法：</p>
+<ul>
+<li>array subscript notation</li>
+<li>pointer/offset notation with the built-in array’s name as a pointer</li>
+<li>pointer subscript notation</li>
+<li>pointer/offset notation with a pointer</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fig08_17.cpp</span></span><br><span class="line"><span class="comment">// Using subscripting and pointer notation with built-in arrays.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> b[]&#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>&#125;; <span class="comment">// create 4-elements built-in array b</span></span><br><span class="line">    <span class="keyword">int</span>* bPtr&#123;b&#125;; <span class="comment">// set bPtr to pointer to built-in array b</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// output built-in array b using array subscript notation</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Array b displayed with:\n\nArray subscript notation\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i&#123;<span class="number">0</span>&#125;; i &lt; <span class="number">4</span>; ++i) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;b[&quot;</span> &lt;&lt; i &lt;&lt; <span class="string">&quot;] = &quot;</span> &lt;&lt; b[i] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// output built-in array b using array name and pointer/offset notation</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\nPointer/offset notation where &quot;</span> </span><br><span class="line">        &lt;&lt; <span class="string">&quot;the pointer is the array name\n&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> offset1&#123;<span class="number">0</span>&#125;; offset1 &lt; <span class="number">4</span>; ++offset1) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;*(b + &quot;</span> &lt;&lt; offset1 &lt;&lt; <span class="string">&quot;) = &quot;</span> &lt;&lt; *(b + offset1) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// output built-in array b using bPtr and array subscript notation</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\nPointer subscript notation\n&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> j&#123;<span class="number">0</span>&#125;; j &lt; <span class="number">4</span>; ++j) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;bPtr[&quot;</span> &lt;&lt; j &lt;&lt; <span class="string">&quot;] = &quot;</span> &lt;&lt; bPtr[j] &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// output built-in array b using bPtr and pointer/offset notation</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\nPointer/offset notation&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> offset2&#123;<span class="number">0</span>&#125;; offset2 &lt; <span class="number">4</span>; ++offset2) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;*(bPtr + &quot;</span> &lt;&lt; offset2 &lt;&lt; <span class="string">&quot;) = &quot;</span> &lt;&lt; *(bPtr + offset2) &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220429102329.png" alt=""></p>
+<p><strong>Pointer-Based Strings</strong></p>
+<p>A string is accessed via a pointer to its first character. The result of <code>sizeof</code> for a string literal is the length of the string including the terminating null character.</p>
+<p><strong>String Literal as Initializers</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> color[]&#123;<span class="string">&quot;blue&quot;</span>&#125;; <span class="comment">// 5-elements built-in array</span></span><br><span class="line"><span class="comment">// containing &#x27;b&#x27;,&#x27;l&#x27;,&#x27;u&#x27;,&#x27;e&#x27;, and &#x27;0&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* colorPtr&#123;<span class="string">&quot;blue&quot;</span>&#125;; <span class="comment">// pointer variable</span></span><br><span class="line"><span class="comment">// pointing to the &#x27;b&#x27; somewhere in the memory</span></span><br></pre></td></tr></table></figure>
+<p>String literals cannot be modified.</p>
+<p><strong>Character Constants as Initializers</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> color[] = <span class="string">&quot;blue&quot;</span>;</span><br><span class="line"><span class="comment">// sanme as</span></span><br><span class="line"><span class="keyword">char</span> color[]&#123;<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;\0&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>当声明一个 built-in array 来容纳 string 的时候，必须要保证 built-in array 足够大装下 string 和 截止空字符。如果大小不够，会导致 logic error。</p>
+<p>对于一个20个元素的 char 数组，我们可以使用 cin 来输入元素。</p>
+<p><code>cin &gt;&gt; set(20) &gt;&gt; word;</code></p>
+<p>setw() 可以保证输入19个字符，以及预留一个截止空字符位。注意， setw 只对下一条输入有效。如果输入超出了19个字符，超出的部分不会存储在 word 数组中，但是超出的部分会留在 输入流 中，被下一次的操作所读取。</p>
+<p><strong>cin.getline</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> sentence[<span class="number">80</span>];</span><br><span class="line">cin.<span class="built_in">getline</span>(sentence, <span class="number">80</span>, <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line"><span class="comment">// same as</span></span><br><span class="line">cin.<span class="built_in">getline</span>(sentence, <span class="number">80</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>上述代码示例，声明了 built-in array 的 sentence，并从键盘输入中读取 80 个字符。读取在遇到 <code>'\n'</code> 时候停止。</p>
+<p><strong>Displaying C strings</strong></p>
+<p>The characters are output until a terminating null character is encountered; the null character is not displayed.</p>
+<h2 id="9-小结">9. 小结</h2>
+<p>下一节，我们将更加深入一点的讨论 class。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://aerosand.cn">Aerosand</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://aerosand.cn">https://aerosand.cn</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">此文章版权归aerosand.cn所有，如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a><a class="post-meta__tags" href="/tags/C-How-to-Program/">C++ How to Program</a></div><div class="post_share"><div class="social-share" data-image="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信打赏"/></a><div class="post-qr-code-desc">微信打赏</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝打赏"/></a><div class="post-qr-code-desc">支付宝打赏</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/20220403110806/"><img class="prev-cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">《C++ How to Program》 06 类的模板：array和vector</div></div></a></div><div class="next-post pull-right"><a href="/posts/20220417081137/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220524230234.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">新标日初级上02</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/20220305101410/" title="《C++ How to Program》 01 介绍C++的基础"><img class="cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-05</div><div class="title">《C++ How to Program》 01 介绍C++的基础</div></div></a></div><div><a href="/posts/20220305112100/" title="《C++ How to Program》 02 C++类、对象和字符串"><img class="cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-05</div><div class="title">《C++ How to Program》 02 C++类、对象和字符串</div></div></a></div><div><a href="/posts/20220313170122/" title="《C++ How to Program》 03 算法及控制语句"><img class="cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-13</div><div class="title">《C++ How to Program》 03 算法及控制语句</div></div></a></div><div><a href="/posts/20220322170942/" title="《C++ How to Program》 04 控制语句"><img class="cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-22</div><div class="title">《C++ How to Program》 04 控制语句</div></div></a></div><div><a href="/posts/20220430095821/" title="《C++ How to Program》 08 类 classes"><img class="cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-30</div><div class="title">《C++ How to Program》 08 类 classes</div></div></a></div><div><a href="/posts/20220330160659/" title="《C++ How to Program》 05 函数和递归"><img class="cover" src="https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-30</div><div class="title">《C++ How to Program》 05 函数和递归</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Waline</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://dl2.img.timecdn.cn/2022/01/01/astrowalk.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Aerosand</div><div class="author-info__description">Welcome to Aerosand</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">38</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/aerosand"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:aerosand@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好，欢迎来到Aerosand</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">2. 指针变量的声明和初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%A3%B0%E6%98%8E%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">2.1. 声明和初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-text">2.2. 指针操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-%E5%9C%B0%E5%9D%80%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%88-%EF%BC%89"><span class="toc-text">2.2.1. 地址操作符（&amp;）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-%E9%97%B4%E6%8E%A5%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88-%EF%BC%89%EF%BC%88indirection-operator%EF%BC%89"><span class="toc-text">2.2.2. 间接运算符（*）（indirection operator）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">2.2.3. 代码示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8C%87%E9%92%88%E7%9A%84%E6%8C%89%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92"><span class="toc-text">3. 指针的按引用传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%86%85%E7%BD%AE%E6%95%B0%E7%BB%84Built-in-Arrays"><span class="toc-text">4. 内置数组Built-in Arrays</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%A3%B0%E6%98%8E%E5%92%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">4.1. 声明和初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E4%BC%A0%E9%80%92%E7%BB%99%E5%87%BD%E6%95%B0"><span class="toc-text">4.2. 传递给函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-text">4.3. 数组排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-built-in-array-%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7%E5%92%8C%E5%BF%85%E8%A6%81%E6%80%A7"><span class="toc-text">4.4. built-in array 的局限性和必要性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B8%B8%E6%8C%87%E9%92%88%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">5. 常指针的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Nonconstant-Pointer-to-Nonconstant-Data"><span class="toc-text">5.1. Nonconstant Pointer to Nonconstant Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Nonconstant-Pointer-to-Constant-Data"><span class="toc-text">5.2. Nonconstant Pointer to Constant Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-Constant-Pointer-to-Nonconstant-Data"><span class="toc-text">5.3. Constant Pointer to Nonconstant Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-Constant-Pointer-to-Constant-Data"><span class="toc-text">5.4. Constant Pointer to Constant Data</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-sizeof-Operator"><span class="toc-text">6. sizeof Operator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%8C%87%E9%92%88%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E6%8C%87%E9%92%88%E7%AE%97%E6%95%B0%E8%AE%A1%E7%AE%97"><span class="toc-text">7. 指针表达式和指针算数计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8C%87%E9%92%88%E7%9A%84%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="toc-text">7.1. 指针的加减法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%8C%87%E9%92%88%E7%9A%84%E7%9B%B8%E5%87%8F"><span class="toc-text">7.2. 指针的相减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%8C%87%E9%92%88%E8%B5%8B%E5%80%BC%E5%92%8C%E6%AF%94%E8%BE%83"><span class="toc-text">7.3. 指针赋值和比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Relationship-between-Pointers-and-Built-in-Arrays"><span class="toc-text">8. Relationship between Pointers and Built-in Arrays</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%B0%8F%E7%BB%93"><span class="toc-text">9. 小结</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://codehelppro.com/wp-content/uploads/2020/11/hello-world-in-c-768x384.png')"><div id="footer-wrap"><div class="copyright">&copy;2022 By Aerosand</div><div class="footer_custom_text">𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓐𝓮𝓻𝓸𝓼𝓪𝓷𝓭</br><a href="https://aerosand.github.io">我们的征途是星辰大海🚀</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://aerosand-2wo6lnviw-aerosand-outlookcom.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: true,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://aerosand.github.io/posts/20220413154214/'
+    this.page.identifier = 'posts/20220413154214/'
+    this.page.title = '《C++ How to Program》 07 指针 pointers'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Waline' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><div class="aplayer no-destroy" data-id="7217305975" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="你好啊~,Hi~,你太棒了~,开心~,棒棒的~,こんにちは~,Bonjour~,Hallo~,Здравствыйте~,안녕하세요~,Salve~" data-fontsize="15px" data-random="true" async="async"></script><script>(function(d, w, c) {
+    w.ChatraID = 'Qdbg8NKY3hRXi4x98';
+    var s = d.createElement('script');
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+    };
+    s.async = true;
+    s.src = 'https://call.chatra.io/chatra.js';
+    if (d.head) d.head.appendChild(s);
+})(document, window, 'Chatra');
+
+if (false) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      Chatra('openChat')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      Chatra('hide')
+    }
+    function chatBtnShow () {
+      Chatra('show')
+    }
+  }
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":100,"vOffeset":-80},"mobile":{"show":true,"scale":0.6},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
