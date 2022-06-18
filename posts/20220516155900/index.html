@@ -151,11 +151,14 @@
 <li><code>icoFoam.C</code> is the main file</li>
 <li><code>createFields.H</code> is an inclusion file</li>
 </ul>
-<h2 id="1-控制方程"><a href="#1-控制方程" class="headerlink" title="1. 控制方程"></a>1. 控制方程</h2><script type="math/tex; mode=display">
-\begin{cases}
-\nabla\cdot u = 0 \\
-\frac{\partial u}{\partial t} + \nabla\cdot (uu) - \nabla\cdot(\nu\nabla u)=-\nabla p
-\end{cases}</script><p>说明：</p>
+<h2 id="1-控制方程">1. 控制方程</h2>
+<p>$$<br>
+\begin{cases}<br>
+\nabla\cdot u = 0 \<br>
+\frac{\partial u}{\partial t} + \nabla\cdot (uu) - \nabla\cdot(\nu\nabla u)=-\nabla p<br>
+\end{cases}<br>
+$$</p>
+<p>说明：</p>
 <ul>
 <li>The kinetic viscosity $\nu$ is constant for Newtonian flow</li>
 <li>The kinetic pressure $p$ is the static pressure divided by the constant density $\rho$ (Here, we only solve for kinetic pressure)</li>
@@ -163,7 +166,8 @@
 <li>The non-linear convection term is linearized and evaluated using Gauss’ theorem, as <code>Foam::div(phi, U)</code>, where the face flux field <code>phi</code> is taken from the previous time step/iteration</li>
 <li>Unknowns are $u$ and $p$, but there is no pressure equation</li>
 </ul>
-<h2 id="2-算法代码"><a href="#2-算法代码" class="headerlink" title="2. 算法代码"></a>2. 算法代码</h2><p>首先是主体的循环结构：</p>
+<h2 id="2-算法代码">2. 算法代码</h2>
+<p>首先是主体的循环结构：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (runTime.<span class="built_in">loop</span>())</span><br><span class="line">&#123;</span><br><span class="line">	&#123;</span><br><span class="line">		\\ &lt;UEqn&gt;</span><br><span class="line">		<span class="keyword">while</span> (piso.<span class="built_in">correct</span>())</span><br><span class="line">		&#123;</span><br><span class="line">			\\ &lt;pEqn&gt;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其次是 <code>UEqn</code> 部分：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fvVectorMatrix <span class="title">UEqn</span></span></span><br><span class="line"><span class="function"><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">	fvm::ddt(U)</span></span></span><br><span class="line"><span class="params"><span class="function">	+ fvm::(phi, U)</span></span></span><br><span class="line"><span class="params"><span class="function">	- fvm::laplacian(nu, U)</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (piso.<span class="built_in">momentumPredictor</span>())</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">solve</span>(UEqn == -fvc::<span class="built_in">grad</span>(p));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
