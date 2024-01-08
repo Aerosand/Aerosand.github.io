@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Cafe/index.html</loc>
+    <loc>https://aerosand.github.io/Math/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Math/index.html</loc>
+    <loc>https://aerosand.github.io/Cafe/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -459,6 +459,13 @@
   </url>
   
   <url>
+    <loc>https://aerosand.github.io/tags/Memo/</loc>
+    <lastmod>2024-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aerosand.github.io/tags/CFD/</loc>
     <lastmod>2024-01-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -537,13 +544,6 @@
   
   <url>
     <loc>https://aerosand.github.io/tags/ubuntu/</loc>
-    <lastmod>2024-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aerosand.github.io/tags/Memo/</loc>
     <lastmod>2024-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
