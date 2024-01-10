@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aerosand.github.io/Cafe/index.html</loc>
+    
+    <lastmod>2024-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://aerosand.github.io/posts/20230502112308/</loc>
     
     <lastmod>2024-01-10</lastmod>
@@ -111,15 +120,6 @@
   
   <url>
     <loc>https://aerosand.github.io/posts/20230804121440/</loc>
-    
-    <lastmod>2024-01-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://aerosand.github.io/Cafe/index.html</loc>
     
     <lastmod>2024-01-10</lastmod>
     
@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/CG/index.html</loc>
+    <loc>https://aerosand.github.io/CS/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/CS/index.html</loc>
+    <loc>https://aerosand.github.io/CG/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -362,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Numerics/index.html</loc>
+    <loc>https://aerosand.github.io/Mindself/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Mindself/index.html</loc>
+    <loc>https://aerosand.github.io/Numerics/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
