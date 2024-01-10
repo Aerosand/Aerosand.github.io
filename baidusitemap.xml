@@ -145,10 +145,6 @@
     <lastmod>2024-01-07</lastmod>
   </url>
   <url>
-    <loc>https://aerosand.github.io/OpenFOAM/index.html</loc>
-    <lastmod>2024-01-07</lastmod>
-  </url>
-  <url>
     <loc>https://aerosand.github.io/Mindself/index.html</loc>
     <lastmod>2024-01-07</lastmod>
   </url>
@@ -157,15 +153,19 @@
     <lastmod>2024-01-07</lastmod>
   </url>
   <url>
+    <loc>https://aerosand.github.io/OpenFOAM/index.html</loc>
+    <lastmod>2024-01-07</lastmod>
+  </url>
+  <url>
     <loc>https://aerosand.github.io/Physics/index.html</loc>
     <lastmod>2024-01-07</lastmod>
   </url>
   <url>
-    <loc>https://aerosand.github.io/Scientech/index.html</loc>
+    <loc>https://aerosand.github.io/Research/index.html</loc>
     <lastmod>2024-01-07</lastmod>
   </url>
   <url>
-    <loc>https://aerosand.github.io/Research/index.html</loc>
+    <loc>https://aerosand.github.io/Scientech/index.html</loc>
     <lastmod>2024-01-07</lastmod>
   </url>
 </urlset> 
