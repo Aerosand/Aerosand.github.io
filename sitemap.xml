@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Numerics/index.html</loc>
+    <loc>https://aerosand.github.io/Mindself/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Mindself/index.html</loc>
+    <loc>https://aerosand.github.io/Numerics/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -398,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Physics/index.html</loc>
+    <loc>https://aerosand.github.io/Research/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Research/index.html</loc>
+    <loc>https://aerosand.github.io/Physics/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -462,6 +462,13 @@
   
   <url>
     <loc>https://aerosand.github.io/tags/Hexo/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerosand.github.io/tags/Memo/</loc>
     <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -553,13 +560,6 @@
   
   <url>
     <loc>https://aerosand.github.io/tags/Aerosand/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aerosand.github.io/tags/Memo/</loc>
     <lastmod>2024-01-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
