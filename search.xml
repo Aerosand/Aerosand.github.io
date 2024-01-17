@@ -54,33 +54,6 @@
     
     
     <entry>
-      <title>Hexo 多端和备份</title>
-      <link href="/posts/20240104112232/"/>
-      <url>/posts/20240104112232/</url>
-      
-        <content type="html"><![CDATA[<h2 id="在新端上更新">在新端上更新</h2><p>如果说我们已经成功搭建了个人网站，拷贝了源码到新端。</p><p>比如现在准备在 linux 上更新。</p><h3 id="步骤">步骤</h3><p>安装 hexo 框架</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>准备本地硬件的密钥（一路 enter 默认安装）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure><p>拷贝公共密钥 <code>id_rs.pu</code> 所有内容给 github 账户下新建 <code>SSH keys</code>。建议以网站地址加机器名，如 <code>aerosand.cn@labLinux</code> 。</p><p>配置 git 环境</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;userName&quot;</span><br><span class="line">git config --global user.email &quot;userName@email.com&quot;</span><br></pre></td></tr></table></figure><p>最后在网站源码下执行上传命令即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm run deploy</span><br></pre></td></tr></table></figure><h3 id="可能的问题">可能的问题</h3><p>如果，网站在 git 环节提醒 <code>Permission Denied</code></p><p>可以尝试拷贝密钥到 root 路径下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">cp -r ./.ssh /root/</span><br></pre></td></tr></table></figure><p>问题解决。</p><p>如果，网站源码提醒有权限问题</p><p>可以尝试更改文件夹权限</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 755 -R aerosand.cn</span><br></pre></td></tr></table></figure><h2 id="同时在-github-上备份">同时在 github 上备份</h2><h3 id="GitHub-Desktop-备份">GitHub Desktop 备份</h3><h4 id="思路">思路</h4><p>目前使用这个方法，非常简单清晰。</p><p>无论是 linux 还是 mac os 还是 windows ，各种系统都可以下载安装 GitHub Desktop 软件。</p><p>登陆该软件，使用其他 github 账号也可以，继续使用个人网站托管的 github 网站也可以。</p><p>通过 GitHub Desktop 软件直接备份即可。</p><p>源码仍然可以正常更新个人网站。</p><h4 id="日常使用">日常使用</h4><p>Desktop 拉取最新。</p><p>更新网站。</p><p>Desktop 上传最新。</p><h4 id="可能的问题-2">可能的问题</h4><p>如果在新端上第一次同步代码后，更新网站会提醒 npm 删除等，按照提醒操作即可。</p><h3 id="设置方法（弃用）">设置方法（弃用）</h3><blockquote><p>注意顺序</p></blockquote><p>删除 <code>aerosand.cn/themes/</code> 下的 <code>.git</code> 文件夹</p><p>在根目录 <code>aerosand.cn/</code> 下，初始化仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>配置 <code>.gitignore</code> 文件，内容如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure><p>增加文件到 github 待提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><p>为文件增加评论</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m test</span><br></pre></td></tr></table></figure><p>建立分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch hexo</span><br></pre></td></tr></table></figure><p>切换到该分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git log</span><br></pre></td></tr></table></figure><p>添加远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;github SSH&gt;</span><br><span class="line">gir remote</span><br></pre></td></tr></table></figure><p>将内容推到本地分支上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin source</span><br></pre></td></tr></table></figure><p>讲本地分支和远程仓库分支对应</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -u origin/source</span><br><span class="line">git branch -vv</span><br></pre></td></tr></table></figure><p>文件推到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure><h4 id="日常使用-2">日常使用</h4><p>先检查分支对应，再拉去最新数据</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -vv</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><p>更新博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><p>如果博客更新没有问题的话，该版本源码可以更新到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &lt;comments&gt;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Memo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>CFD理论基础00 基本方程</title>
       <link href="/posts/20230529141915/"/>
       <url>/posts/20230529141915/</url>
@@ -185,31 +158,6 @@
     
     
     <entry>
-      <title>Hexo butterfly 主题使用 Katex “幽灵”空格警告</title>
-      <link href="/posts/20230526171750/"/>
-      <url>/posts/20230526171750/</url>
-      
-        <content type="html"><![CDATA[<p>网站更新的时候会出现警告</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LaTeX-incompatible input and strict mode is set to &#x27;warn&#x27;: Unrecognized Unicode character &quot; &quot; (160) [unknownSymbol]</span><br></pre></td></tr></table></figure><p>警告 LaTex 语法中有识别不了的空格，但是这个空格的出现十分怪异。</p><p>排查后发现是之前写在飞书上的某一篇文章，从飞书直接拷贝过来的。</p><p>对于存在“幽灵”空格的数学公式，再次拷贝到其他文章也无法消除该公式的警告，拷贝到记事本然后拷贝回来也不行。</p><p>对于这种数学公式，除了重新手打，好像没有别的解决办法，故此记录。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Obsidian Get Weather Automatically 天气自动获取方案</title>
       <link href="/posts/20230713142513/"/>
       <url>/posts/20230713142513/</url>
@@ -227,6 +175,31 @@
         <tags>
             
             <tag> Obsidian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo butterfly 主题使用 Katex “幽灵”空格警告</title>
+      <link href="/posts/20230526171750/"/>
+      <url>/posts/20230526171750/</url>
+      
+        <content type="html"><![CDATA[<p>网站更新的时候会出现警告</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LaTeX-incompatible input and strict mode is set to &#x27;warn&#x27;: Unrecognized Unicode character &quot; &quot; (160) [unknownSymbol]</span><br></pre></td></tr></table></figure><p>警告 LaTex 语法中有识别不了的空格，但是这个空格的出现十分怪异。</p><p>排查后发现是之前写在飞书上的某一篇文章，从飞书直接拷贝过来的。</p><p>对于存在“幽灵”空格的数学公式，再次拷贝到其他文章也无法消除该公式的警告，拷贝到记事本然后拷贝回来也不行。</p><p>对于这种数学公式，除了重新手打，好像没有别的解决办法，故此记录。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -770,31 +743,6 @@
     
     
     <entry>
-      <title>Hexo&amp;Obsidian不完全工作流</title>
-      <link href="/posts/202201301024/"/>
-      <url>/posts/202201301024/</url>
-      
-        <content type="html"><![CDATA[<h2 id="1-使用效果">1. 使用效果</h2><h3 id="1-1-打开-obsidian-的网站库">1.1 打开 obsidian 的网站库</h3><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091335.png" alt=""></p><h3 id="1-2-来到-dataview-页面">1.2 来到 dataview 页面</h3><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091443.png" alt=""></p><h3 id="1-3-点击创建文章">1.3 点击创建文章</h3><p>创建文章</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091536.png" alt=""></p><p>输入标题</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091731.png" alt=""></p><p>进入文章书写页面</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092142.png" alt=""></p><h3 id="1-4-发布文章">1.4 发布文章</h3><p>一键打开到 vscode</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092246.png" alt=""></p><p>打开终端并切到 gitbash</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092427.png" alt=""></p><p>输入命令预览和发布</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><h2 id="2-配置-obsidian">2. 配置 obsidian</h2><h3 id="2-1-打开-vault">2.1 打开 vault</h3><p>直接打开 hexo 博客的 <strong>根目录</strong> 为 vault</p><p>例如：</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130090223.png" alt=""></p><h3 id="2-2-配置模板格式">2.2 配置模板格式</h3><h4 id="2-2-1-日记模板（可选）">2.2.1 日记模板（可选）</h4><p>可以选择打开 obsidian 的日记功能，模板按照自己需要来就行。</p><h4 id="2-2-2-post-模板">2.2.2 post 模板</h4><p>给出模板的写法，如下</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">1</span>) </span>%&gt;</span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-02-18</span><span class="string">-星期五</span> <span class="number">13</span><span class="string">:50:54</span></span><br><span class="line"><span class="attr">update:</span> <span class="number">2022-12-06</span><span class="string">-星期二</span> <span class="number">20</span><span class="string">:15:52</span></span><br><span class="line"><span class="attr">abbrlink:</span> &#123;&#123;<span class="string">DATE:YYYYMMDDHHmmss</span>&#125;&#125;</span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">2</span>) </span>%&gt;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">3</span>) </span>%&gt;</span><br><span class="line"><span class="attr">keywords:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">4</span>) </span>%&gt;</span><br><span class="line"><span class="attr">description:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">5</span>) </span>%&gt;</span><br><span class="line"><span class="attr">top_img:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">6</span>) </span>%&gt;</span><br><span class="line"><span class="attr">cover:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">7</span>) </span>%&gt;</span><br><span class="line"><span class="attr">comments:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">toc_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">toc_style_simple:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">copyright:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">copyright_author:</span> <span class="string">Aerosand</span></span><br><span class="line"><span class="attr">copyright_author_href:</span> <span class="string">https://aerosand.cn</span></span><br><span class="line"><span class="attr">copyright_url:</span> <span class="string">https://aerosand.cn</span></span><br><span class="line"><span class="attr">copyright_info:</span> <span class="string">此文章版权归aerosand.cn所有，如有转载，请注明来自原作者</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight_shrink:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">aside:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">swiper_index:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">sticky:</span> </span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line">&lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">8</span>) </span>%&gt;</span><br></pre></td></tr></table></figure><p>部分联动参数说明：</p><table><thead><tr><th>字段</th><th>值</th><th>说明</th></tr></thead><tbody><tr><td>title</td><td>如上</td><td>使用 obsidian 的 templater 插件，自动获取文件标题到文章标题</td></tr><tr><td>date</td><td>如上</td><td>使用 obsidian 的 template 时间格式，自动生成创建时间</td></tr><tr><td>update</td><td>&lt;空&gt;</td><td>使用 obsidian 的 linter 插件，在保存文件时，自动生成更新时间</td></tr><tr><td>tags</td><td>如上</td><td>同样使用 templater 插件，使用快捷键快速跳转输入光标到此位置</td></tr><tr><td>swiper_index</td><td>1——10</td><td>数值越大越靠前</td></tr><tr><td>sticky</td><td>整数</td><td>数值越大，置顶越靠前</td></tr></tbody></table><h3 id="2-3-配置-obsidian-插件">2.3 配置 obsidian 插件</h3><h4 id="2-3-1-配置-quickadd-插件">2.3.1 配置 quickadd 插件</h4><p>配置参数</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092917.png" alt=""></p><h4 id="2-3-2-配置-cmenu-插件">2.3.2 配置 cmenu 插件</h4><p>进入 cmenu 插件的设置页面，搜索 quickadd 命令，添加到 cmenu，并调整位置和样式。</p><h4 id="2-3-3-配置-linter-插件">2.3.3 配置 linter 插件</h4><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130093118.png" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130093148.png" alt=""></p><blockquote><p>注意：自动更新时间的关键词要正确，<br>分别是 <strong>date</strong> 和 <strong>updated</strong></p></blockquote><h4 id="2-3-4-配置-imag-auto-upload-plugin-插件">2.3.4 配置 imag auto upload plugin 插件</h4><p>具体设置可以参考 👉 <a href="https://zhuanlan.zhihu.com/p/367078175">自动上传图片到图床（image auto upload插件介绍） - 知乎 (zhihu.com)</a></p><h3 id="2-4-利用-obsidian-来数据总览">2.4 利用 obsidian 来数据总览</h3><p>主要是使用 obsidian 的 dataview 插件，进行本地发布文章的数据总览。</p><h4 id="2-4-1-安装-dataview-插件">2.4.1 安装 dataview 插件</h4><p>在网上搜索或者 obsidian 软件内打开社区插件搜索安装。</p><h4 id="2-4-2-dataview-使用">2.4.2 dataview 使用</h4><p>dataview 插件不需要特别配置，直接在目录上新建页面，如：新建页面，重命名为 <strong>Dataview</strong></p><p>打开 Dataview 页面，参考 <a href="https://blacksmithgu.github.io/obsidian-dataview/">dataview插件的官方文档</a>，进行数据总览。</p><p>例如：</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130094011.png" alt=""></p><p>预览效果：</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130094037.png" alt=""></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>OpenFOAM环境准备</title>
       <link href="/posts/20230331145640/"/>
       <url>/posts/20230331145640/</url>
@@ -816,6 +764,58 @@
             <tag> linux </tag>
             
             <tag> ubuntu </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo 多端和备份</title>
+      <link href="/posts/20240104112232/"/>
+      <url>/posts/20240104112232/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在新端上更新">在新端上更新</h2><p>如果说我们已经成功搭建了个人网站，拷贝了源码到新端。</p><p>比如现在准备在 linux 上更新。</p><h3 id="步骤">步骤</h3><p>安装 hexo 框架</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>准备本地硬件的密钥（一路 enter 默认安装）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure><p>拷贝公共密钥 <code>id_rs.pu</code> 所有内容给 github 账户下新建 <code>SSH keys</code>。建议以网站地址加机器名，如 <code>aerosand.cn@labLinux</code> 。</p><p>配置 git 环境</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;userName&quot;</span><br><span class="line">git config --global user.email &quot;userName@email.com&quot;</span><br></pre></td></tr></table></figure><p>最后在网站源码下执行上传命令即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm run deploy</span><br></pre></td></tr></table></figure><h3 id="可能的问题">可能的问题</h3><p>如果，网站在 git 环节提醒 <code>Permission Denied</code></p><p>可以尝试拷贝密钥到 root 路径下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">cp -r ./.ssh /root/</span><br></pre></td></tr></table></figure><p>问题解决。</p><p>如果，网站源码提醒有权限问题</p><p>可以尝试更改文件夹权限</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 755 -R aerosand.cn</span><br></pre></td></tr></table></figure><h2 id="同时在-github-上备份">同时在 github 上备份</h2><h3 id="GitHub-Desktop-备份">GitHub Desktop 备份</h3><h4 id="思路">思路</h4><p>目前使用这个方法，非常简单清晰。</p><p>无论是 linux 还是 mac os 还是 windows ，各种系统都可以下载安装 GitHub Desktop 软件。</p><p>登陆该软件，使用其他 github 账号也可以，继续使用个人网站托管的 github 网站也可以。</p><p>通过 GitHub Desktop 软件直接备份即可。</p><p>源码仍然可以正常更新个人网站。</p><h4 id="日常使用">日常使用</h4><p>Desktop 拉取最新。</p><p>更新网站。</p><p>Desktop 上传最新。</p><h4 id="可能的问题-2">可能的问题</h4><p>如果在新端上第一次同步代码后，更新网站会提醒 npm 删除等，按照提醒操作即可。</p><h3 id="设置方法（弃用）">设置方法（弃用）</h3><blockquote><p>注意顺序</p></blockquote><p>删除 <code>aerosand.cn/themes/</code> 下的 <code>.git</code> 文件夹</p><p>在根目录 <code>aerosand.cn/</code> 下，初始化仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>配置 <code>.gitignore</code> 文件，内容如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure><p>增加文件到 github 待提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><p>为文件增加评论</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m test</span><br></pre></td></tr></table></figure><p>建立分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch hexo</span><br></pre></td></tr></table></figure><p>切换到该分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git log</span><br></pre></td></tr></table></figure><p>添加远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;github SSH&gt;</span><br><span class="line">gir remote</span><br></pre></td></tr></table></figure><p>将内容推到本地分支上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin source</span><br></pre></td></tr></table></figure><p>讲本地分支和远程仓库分支对应</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -u origin/source</span><br><span class="line">git branch -vv</span><br></pre></td></tr></table></figure><p>文件推到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure><h4 id="日常使用-2">日常使用</h4><p>先检查分支对应，再拉去最新数据</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -vv</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><p>更新博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><p>如果博客更新没有问题的话，该版本源码可以更新到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &lt;comments&gt;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Memo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo&amp;Obsidian不完全工作流</title>
+      <link href="/posts/202201301024/"/>
+      <url>/posts/202201301024/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-使用效果">1. 使用效果</h2><h3 id="1-1-打开-obsidian-的网站库">1.1 打开 obsidian 的网站库</h3><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091335.png" alt=""></p><h3 id="1-2-来到-dataview-页面">1.2 来到 dataview 页面</h3><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091443.png" alt=""></p><h3 id="1-3-点击创建文章">1.3 点击创建文章</h3><p>创建文章</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091536.png" alt=""></p><p>输入标题</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130091731.png" alt=""></p><p>进入文章书写页面</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092142.png" alt=""></p><h3 id="1-4-发布文章">1.4 发布文章</h3><p>一键打开到 vscode</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092246.png" alt=""></p><p>打开终端并切到 gitbash</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092427.png" alt=""></p><p>输入命令预览和发布</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><h2 id="2-配置-obsidian">2. 配置 obsidian</h2><h3 id="2-1-打开-vault">2.1 打开 vault</h3><p>直接打开 hexo 博客的 <strong>根目录</strong> 为 vault</p><p>例如：</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130090223.png" alt=""></p><h3 id="2-2-配置模板格式">2.2 配置模板格式</h3><h4 id="2-2-1-日记模板（可选）">2.2.1 日记模板（可选）</h4><p>可以选择打开 obsidian 的日记功能，模板按照自己需要来就行。</p><h4 id="2-2-2-post-模板">2.2.2 post 模板</h4><p>给出模板的写法，如下</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">1</span>) </span>%&gt;</span><br><span class="line"><span class="attr">date:</span> <span class="number">2022-02-18</span><span class="string">-星期五</span> <span class="number">13</span><span class="string">:50:54</span></span><br><span class="line"><span class="attr">update:</span> <span class="number">2022-12-06</span><span class="string">-星期二</span> <span class="number">20</span><span class="string">:15:52</span></span><br><span class="line"><span class="attr">abbrlink:</span> &#123;&#123;<span class="string">DATE:YYYYMMDDHHmmss</span>&#125;&#125;</span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="bullet">-</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">2</span>) </span>%&gt;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">3</span>) </span>%&gt;</span><br><span class="line"><span class="attr">keywords:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">4</span>) </span>%&gt;</span><br><span class="line"><span class="attr">description:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">5</span>) </span>%&gt;</span><br><span class="line"><span class="attr">top_img:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">6</span>) </span>%&gt;</span><br><span class="line"><span class="attr">cover:</span> &lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">7</span>) </span>%&gt;</span><br><span class="line"><span class="attr">comments:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">toc_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">toc_style_simple:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">copyright:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">copyright_author:</span> <span class="string">Aerosand</span></span><br><span class="line"><span class="attr">copyright_author_href:</span> <span class="string">https://aerosand.cn</span></span><br><span class="line"><span class="attr">copyright_url:</span> <span class="string">https://aerosand.cn</span></span><br><span class="line"><span class="attr">copyright_info:</span> <span class="string">此文章版权归aerosand.cn所有，如有转载，请注明来自原作者</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight_shrink:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">aside:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">swiper_index:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">sticky:</span> </span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line">&lt;%<span class="language-ruby"> tp.file.cursor(<span class="number">8</span>) </span>%&gt;</span><br></pre></td></tr></table></figure><p>部分联动参数说明：</p><table><thead><tr><th>字段</th><th>值</th><th>说明</th></tr></thead><tbody><tr><td>title</td><td>如上</td><td>使用 obsidian 的 templater 插件，自动获取文件标题到文章标题</td></tr><tr><td>date</td><td>如上</td><td>使用 obsidian 的 template 时间格式，自动生成创建时间</td></tr><tr><td>update</td><td>&lt;空&gt;</td><td>使用 obsidian 的 linter 插件，在保存文件时，自动生成更新时间</td></tr><tr><td>tags</td><td>如上</td><td>同样使用 templater 插件，使用快捷键快速跳转输入光标到此位置</td></tr><tr><td>swiper_index</td><td>1——10</td><td>数值越大越靠前</td></tr><tr><td>sticky</td><td>整数</td><td>数值越大，置顶越靠前</td></tr></tbody></table><h3 id="2-3-配置-obsidian-插件">2.3 配置 obsidian 插件</h3><h4 id="2-3-1-配置-quickadd-插件">2.3.1 配置 quickadd 插件</h4><p>配置参数</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130092917.png" alt=""></p><h4 id="2-3-2-配置-cmenu-插件">2.3.2 配置 cmenu 插件</h4><p>进入 cmenu 插件的设置页面，搜索 quickadd 命令，添加到 cmenu，并调整位置和样式。</p><h4 id="2-3-3-配置-linter-插件">2.3.3 配置 linter 插件</h4><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130093118.png" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130093148.png" alt=""></p><blockquote><p>注意：自动更新时间的关键词要正确，<br>分别是 <strong>date</strong> 和 <strong>updated</strong></p></blockquote><h4 id="2-3-4-配置-imag-auto-upload-plugin-插件">2.3.4 配置 imag auto upload plugin 插件</h4><p>具体设置可以参考 👉 <a href="https://zhuanlan.zhihu.com/p/367078175">自动上传图片到图床（image auto upload插件介绍） - 知乎 (zhihu.com)</a></p><h3 id="2-4-利用-obsidian-来数据总览">2.4 利用 obsidian 来数据总览</h3><p>主要是使用 obsidian 的 dataview 插件，进行本地发布文章的数据总览。</p><h4 id="2-4-1-安装-dataview-插件">2.4.1 安装 dataview 插件</h4><p>在网上搜索或者 obsidian 软件内打开社区插件搜索安装。</p><h4 id="2-4-2-dataview-使用">2.4.2 dataview 使用</h4><p>dataview 插件不需要特别配置，直接在目录上新建页面，如：新建页面，重命名为 <strong>Dataview</strong></p><p>打开 Dataview 页面，参考 <a href="https://blacksmithgu.github.io/obsidian-dataview/">dataview插件的官方文档</a>，进行数据总览。</p><p>例如：</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130094011.png" alt=""></p><p>预览效果：</p><p><img src="https://cdn.jsdelivr.net/gh/aerosand/picgo/img/20220130094037.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
