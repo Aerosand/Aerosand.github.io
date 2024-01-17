@@ -380,15 +380,6 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/Numerics/index.html</loc>
-    
-    <lastmod>2024-01-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://aerosand.github.io/Mindself/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
@@ -399,6 +390,15 @@
   
   <url>
     <loc>https://aerosand.github.io/OpenFOAM/index.html</loc>
+    
+    <lastmod>2024-01-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerosand.github.io/Numerics/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
