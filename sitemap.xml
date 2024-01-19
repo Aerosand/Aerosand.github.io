@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/posts/20230512155121/</loc>
+    <loc>https://aerosand.github.io/posts/20230620132237/</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/posts/20230620132237/</loc>
+    <loc>https://aerosand.github.io/posts/20230512155121/</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -425,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/categories/index.html</loc>
+    <loc>https://aerosand.github.io/cal0to1/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -434,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/cal0to1/index.html</loc>
+    <loc>https://aerosand.github.io/categories/index.html</loc>
     
     <lastmod>2024-01-07</lastmod>
     
@@ -468,6 +468,20 @@
   </url>
   
   <url>
+    <loc>https://aerosand.github.io/tags/Memo/</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerosand.github.io/tags/Aerosand/</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aerosand.github.io/tags/CFD/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -489,6 +503,13 @@
   </url>
   
   <url>
+    <loc>https://aerosand.github.io/tags/Obsidian/</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aerosand.github.io/tags/OpenFOAM/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -497,13 +518,6 @@
   
   <url>
     <loc>https://aerosand.github.io/tags/code/</loc>
-    <lastmod>2024-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aerosand.github.io/tags/Obsidian/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -531,13 +545,6 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/tags/linux/</loc>
-    <lastmod>2024-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://aerosand.github.io/tags/OpenFOAM-algorithm/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -545,21 +552,14 @@
   </url>
   
   <url>
+    <loc>https://aerosand.github.io/tags/linux/</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aerosand.github.io/tags/ubuntu/</loc>
-    <lastmod>2024-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aerosand.github.io/tags/Memo/</loc>
-    <lastmod>2024-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aerosand.github.io/tags/Aerosand/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -575,14 +575,14 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/categories/CFD/</loc>
+    <loc>https://aerosand.github.io/categories/Aerosand/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/categories/OpenFOAM/</loc>
+    <loc>https://aerosand.github.io/categories/CFD/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -596,14 +596,14 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/categories/OpenFOAM/ofsp/</loc>
+    <loc>https://aerosand.github.io/categories/OpenFOAM/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/categories/Aerosand/</loc>
+    <loc>https://aerosand.github.io/categories/OpenFOAM/ofsp/</loc>
     <lastmod>2024-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
