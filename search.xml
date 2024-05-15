@@ -298,8 +298,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -307,9 +305,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -329,8 +327,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -338,9 +334,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -360,8 +356,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -369,9 +363,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -391,8 +385,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -400,9 +392,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -422,8 +414,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -431,9 +421,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -442,7 +432,7 @@
     
     
     <entry>
-      <title>OpenFOAM开发编程基础06 开发库</title>
+      <title>OpenFOAM Sharing Programming 开发编程基础06 开发库</title>
       <link href="/posts/20230508164303/"/>
       <url>/posts/20230508164303/</url>
       
@@ -453,8 +443,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -462,9 +450,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -484,8 +472,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -493,9 +479,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> ofsp </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> OpenFOAM programming </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -515,8 +501,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -524,9 +508,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> ofsp </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> OpenFOAM programming </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -546,8 +530,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -555,7 +537,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> ofsp </tag>
+            <tag> OFprogramming </tag>
+            
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -575,8 +559,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -584,9 +566,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> programming </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -606,8 +588,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -615,9 +595,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> ofsp </tag>
+            <tag> OFprogramming </tag>
             
-            <tag> OpenFOAM programming </tag>
+            <tag> ofsp2024 </tag>
             
         </tags>
       
@@ -630,7 +610,7 @@
       <link href="/posts/20230517173029/"/>
       <url>/posts/20230517173029/</url>
       
-        <content type="html"><![CDATA[<p>主要参考 <a href="https://www.tfd.chalmers.se/~hani/kurser/OS_CFD/">https://www.tfd.chalmers.se/~hani/kurser/OS_CFD/</a></p><p>通过不同的问题学习求解器开发。</p>]]></content>
+        <content type="html"><![CDATA[<p>通过不同的问题学习求解器开发。</p>]]></content>
       
       
       <categories>
@@ -644,7 +624,7 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> OpenFOAM solver </tag>
+            <tag> OFsolver </tag>
             
         </tags>
       
@@ -718,8 +698,6 @@
           
           <category> OpenFOAM </category>
           
-          <category> ofsp </category>
-          
       </categories>
       
       
@@ -727,9 +705,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> ofsp </tag>
+            <tag> ofsp2024 </tag>
             
-            <tag> OpenFOAM algorithm </tag>
+            <tag> OFalgorithm </tag>
             
         </tags>
       
@@ -785,7 +763,9 @@
             
             <tag> OpenFOAM </tag>
             
-            <tag> OpenFOAM programming </tag>
+            <tag> OFprogramming </tag>
+            
+            <tag> ofsp2024 </tag>
             
         </tags>
       
