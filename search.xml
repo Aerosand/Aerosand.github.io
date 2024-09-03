@@ -79,6 +79,33 @@
     
     
     <entry>
+      <title>Hexo 多端和备份</title>
+      <link href="/posts/20240104112232/"/>
+      <url>/posts/20240104112232/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在新端上更新">在新端上更新</h2><p>如果说我们已经成功搭建了个人网站，拷贝了源码到新端。</p><p>比如现在准备在 linux 上更新。</p><h3 id="步骤">步骤</h3><p>安装 hexo 框架</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>准备本地硬件的密钥（一路 enter 默认安装）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure><p>拷贝公共密钥 <code>id_rs.pu</code> 所有内容给 github 账户下新建 <code>SSH keys</code>。建议以网站地址加机器名，如 <code>aerosand.cn@labLinux</code> 。</p><p>配置 git 环境</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;userName&quot;</span><br><span class="line">git config --global user.email &quot;userName@email.com&quot;</span><br></pre></td></tr></table></figure><p>最后在网站源码下执行上传命令即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm run deploy</span><br></pre></td></tr></table></figure><h3 id="可能的问题">可能的问题</h3><p>如果，网站在 git 环节提醒 <code>Permission Denied</code></p><p>可以尝试拷贝密钥到 root 路径下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">cp -r ./.ssh /root/</span><br></pre></td></tr></table></figure><p>问题解决。</p><p>如果，网站源码提醒有权限问题</p><p>可以尝试更改文件夹权限</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 755 -R aerosand.cn</span><br></pre></td></tr></table></figure><h2 id="同时在-github-上备份">同时在 github 上备份</h2><h3 id="GitHub-Desktop-备份">GitHub Desktop 备份</h3><h4 id="思路">思路</h4><p>目前使用这个方法，非常简单清晰。</p><p>无论是 linux 还是 mac os 还是 windows ，各种系统都可以下载安装 GitHub Desktop 软件。</p><p>登陆该软件，使用其他 github 账号也可以，继续使用个人网站托管的 github 网站也可以。</p><p>通过 GitHub Desktop 软件直接备份即可。</p><p>源码仍然可以正常更新个人网站。</p><h4 id="日常使用">日常使用</h4><p>Desktop 拉取最新。</p><p>更新网站。</p><p>Desktop 上传最新。</p><h4 id="可能的问题-2">可能的问题</h4><p>如果在新端上第一次同步代码后，更新网站会提醒 npm 删除等，按照提醒操作即可。</p><h3 id="设置方法（弃用）">设置方法（弃用）</h3><blockquote><p>注意顺序</p></blockquote><p>删除 <code>aerosand.cn/themes/</code> 下的 <code>.git</code> 文件夹</p><p>在根目录 <code>aerosand.cn/</code> 下，初始化仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>配置 <code>.gitignore</code> 文件，内容如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure><p>增加文件到 github 待提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><p>为文件增加评论</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m test</span><br></pre></td></tr></table></figure><p>建立分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch hexo</span><br></pre></td></tr></table></figure><p>切换到该分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git log</span><br></pre></td></tr></table></figure><p>添加远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;github SSH&gt;</span><br><span class="line">gir remote</span><br></pre></td></tr></table></figure><p>将内容推到本地分支上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin source</span><br></pre></td></tr></table></figure><p>讲本地分支和远程仓库分支对应</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -u origin/source</span><br><span class="line">git branch -vv</span><br></pre></td></tr></table></figure><p>文件推到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure><h4 id="日常使用-2">日常使用</h4><p>先检查分支对应，再拉去最新数据</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -vv</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><p>更新博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><p>如果博客更新没有问题的话，该版本源码可以更新到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &lt;comments&gt;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Memo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CFD理论基础00 基本方程</title>
       <link href="/posts/20230529141915/"/>
       <url>/posts/20230529141915/</url>
@@ -651,9 +678,9 @@
       
         <tags>
             
-            <tag> OpenFOAM </tag>
-            
             <tag> Memo </tag>
+            
+            <tag> OpenFOAM </tag>
             
         </tags>
       
@@ -734,9 +761,9 @@
       
         <tags>
             
-            <tag> OpenFOAM </tag>
-            
             <tag> Memo </tag>
+            
+            <tag> OpenFOAM </tag>
             
             <tag> linux </tag>
             
@@ -790,40 +817,13 @@
       
         <tags>
             
-            <tag> OpenFOAM </tag>
-            
             <tag> Memo </tag>
+            
+            <tag> OpenFOAM </tag>
             
             <tag> linux </tag>
             
             <tag> ubuntu </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo 多端和备份</title>
-      <link href="/posts/20240104112232/"/>
-      <url>/posts/20240104112232/</url>
-      
-        <content type="html"><![CDATA[<h2 id="在新端上更新">在新端上更新</h2><p>如果说我们已经成功搭建了个人网站，拷贝了源码到新端。</p><p>比如现在准备在 linux 上更新。</p><h3 id="步骤">步骤</h3><p>安装 hexo 框架</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>准备本地硬件的密钥（一路 enter 默认安装）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure><p>拷贝公共密钥 <code>id_rs.pu</code> 所有内容给 github 账户下新建 <code>SSH keys</code>。建议以网站地址加机器名，如 <code>aerosand.cn@labLinux</code> 。</p><p>配置 git 环境</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;userName&quot;</span><br><span class="line">git config --global user.email &quot;userName@email.com&quot;</span><br></pre></td></tr></table></figure><p>最后在网站源码下执行上传命令即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm run deploy</span><br></pre></td></tr></table></figure><h3 id="可能的问题">可能的问题</h3><p>如果，网站在 git 环节提醒 <code>Permission Denied</code></p><p>可以尝试拷贝密钥到 root 路径下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">cp -r ./.ssh /root/</span><br></pre></td></tr></table></figure><p>问题解决。</p><p>如果，网站源码提醒有权限问题</p><p>可以尝试更改文件夹权限</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 755 -R aerosand.cn</span><br></pre></td></tr></table></figure><h2 id="同时在-github-上备份">同时在 github 上备份</h2><h3 id="GitHub-Desktop-备份">GitHub Desktop 备份</h3><h4 id="思路">思路</h4><p>目前使用这个方法，非常简单清晰。</p><p>无论是 linux 还是 mac os 还是 windows ，各种系统都可以下载安装 GitHub Desktop 软件。</p><p>登陆该软件，使用其他 github 账号也可以，继续使用个人网站托管的 github 网站也可以。</p><p>通过 GitHub Desktop 软件直接备份即可。</p><p>源码仍然可以正常更新个人网站。</p><h4 id="日常使用">日常使用</h4><p>Desktop 拉取最新。</p><p>更新网站。</p><p>Desktop 上传最新。</p><h4 id="可能的问题-2">可能的问题</h4><p>如果在新端上第一次同步代码后，更新网站会提醒 npm 删除等，按照提醒操作即可。</p><h3 id="设置方法（弃用）">设置方法（弃用）</h3><blockquote><p>注意顺序</p></blockquote><p>删除 <code>aerosand.cn/themes/</code> 下的 <code>.git</code> 文件夹</p><p>在根目录 <code>aerosand.cn/</code> 下，初始化仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><p>配置 <code>.gitignore</code> 文件，内容如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure><p>增加文件到 github 待提交</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure><p>为文件增加评论</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m test</span><br></pre></td></tr></table></figure><p>建立分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch hexo</span><br></pre></td></tr></table></figure><p>切换到该分支</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git log</span><br></pre></td></tr></table></figure><p>添加远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;github SSH&gt;</span><br><span class="line">gir remote</span><br></pre></td></tr></table></figure><p>将内容推到本地分支上</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin source</span><br></pre></td></tr></table></figure><p>讲本地分支和远程仓库分支对应</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -u origin/source</span><br><span class="line">git branch -vv</span><br></pre></td></tr></table></figure><p>文件推到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure><h4 id="日常使用-2">日常使用</h4><p>先检查分支对应，再拉去最新数据</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -vv</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><p>更新博客</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure><p>如果博客更新没有问题的话，该版本源码可以更新到远程仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &lt;comments&gt;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Memo </tag>
             
         </tags>
       
