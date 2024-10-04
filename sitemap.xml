@@ -517,13 +517,6 @@
   </url>
   
   <url>
-    <loc>https://aerosand.github.io/tags/code/</loc>
-    <lastmod>2024-10-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://aerosand.github.io/tags/OFprogramming/</loc>
     <lastmod>2024-10-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -532,6 +525,13 @@
   
   <url>
     <loc>https://aerosand.github.io/tags/ofsp2024/</loc>
+    <lastmod>2024-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerosand.github.io/tags/code/</loc>
     <lastmod>2024-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
