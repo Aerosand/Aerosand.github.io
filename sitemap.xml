@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aerosand.cc/docs/doctest/</loc>
-    <lastmod>2025-07-19T14:54:28+09:00</lastmod>
+    <loc>https://aerosand.cc/docs/test/doctest/</loc>
+    <lastmod>2025-07-19T22:23:56+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/docs/%E6%B5%8B%E8%AF%95-ofsb/</loc>
+    <loc>https://aerosand.cc/news/obsidian-2025%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/</loc>
+    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.cc/docs/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2025-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aerosand.cc/tags/example/</loc>
