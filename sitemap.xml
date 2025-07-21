@@ -2,42 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aerosand.cc/docs/test/doctest/</loc>
-    <lastmod>2025-07-19T22:23:56+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/getting-started/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/news/obsidian-2025%E4%BD%BF%E7%94%A8%E5%AE%9E%E8%B7%B5/</loc>
-    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+    <loc>https://aerosand.github.io/docs/advanced/multi-language/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/docs/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/organize-files/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/docs/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2025-07-19T00:00:00+00:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/configuration/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/tags/example/</loc>
-    <lastmod>2025-07-16T10:35:49+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/tags/guide/</loc>
-    <lastmod>2025-07-16T10:35:49+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/markdown/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/tags/markdown/</loc>
-    <lastmod>2025-07-16T10:35:49+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/syntax-highlighting/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/news/markdown-file/</loc>
-    <lastmod>2025-07-16T10:35:49+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/latex/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/tags/</loc>
-    <lastmod>2025-07-16T10:35:49+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/diagrams/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/categories/</loc>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/docs/</loc>
-    <lastmod>2025-07-19T14:54:28+09:00</lastmod>
+    <loc>https://aerosand.github.io/tags/example/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/</loc>
+    <loc>https://aerosand.github.io/tags/guide/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/tags/markdown/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/news/markdown/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/tags/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/about/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/advanced/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/callout/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/cards/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/categories/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/advanced/comments/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/advanced/customization/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/deploy-site/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/details/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/filetree/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/</loc>
     <lastmod>2025-07-15T22:01:47+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.cc/news/</loc>
-    <lastmod>2025-07-16T10:35:49+09:00</lastmod>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/icon/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/jupyter/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/news/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/others/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/showcase/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/steps/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/guide/shortcodes/tabs/</loc>
+    <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url>
 </urlset>
