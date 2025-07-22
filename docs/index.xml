@@ -3886,8 +3886,12 @@ $$\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}$$
 &lt;li&gt;wmake 管理程序编译&lt;/li&gt;
 &lt;li&gt;OpenFOAM 应用构建&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;/div&gt;
+&lt;h4&gt;数据交互&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;数据交互&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%95%b0%e6%8d%ae%e4%ba%a4%e4%ba%92&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;输入输出&lt;/li&gt;
+&lt;li&gt;命令行参数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 &lt;h2&gt;3.环境和工具&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3环境和工具&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#3%e7%8e%af%e5%a2%83%e5%92%8c%e5%b7%a5%e5%85%b7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;鉴于 OpenFOAM 的使用环境，我们选择在 ubuntu 24.04 系统环境中，基于 OpenFOAM 2406 版本进行开发，方便起见使用 vscode 工具。&lt;/p&gt;
 
