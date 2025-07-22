@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aerosand.github.io/docs/ofsb/</loc>
-    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://aerosand.github.io/docs/getting-started/</loc>
     <lastmod>2025-07-22T01:35:48+09:00</lastmod>
   </url><url>
@@ -17,7 +14,7 @@
     <loc>https://aerosand.github.io/docs/openfoam-sharing/organize-files/</loc>
     <lastmod>2025-07-22T12:03:11+09:00</lastmod>
   </url><url>
-    <loc>https://aerosand.github.io/docs/ofsp/</loc>
+    <loc>https://aerosand.github.io/docs/ofsb/</loc>
     <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aerosand.github.io/docs/guide/configuration/</loc>
@@ -34,6 +31,9 @@
   </url><url>
     <loc>https://aerosand.github.io/docs/openfoam-sharing/</loc>
     <lastmod>2025-07-22T12:03:11+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/ofsp/</loc>
+    <lastmod>2025-07-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aerosand.github.io/docs/guide/syntax-highlighting/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
