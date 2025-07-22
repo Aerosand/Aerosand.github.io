@@ -11,29 +11,47 @@
     <loc>https://aerosand.github.io/docs/guide/organize-files/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/organize-files/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/configuration/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/configuration/</loc>
   </url><url>
     <loc>https://aerosand.github.io/docs/guide/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/markdown/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/markdown/</loc>
   </url><url>
     <loc>https://aerosand.github.io/docs/guide/syntax-highlighting/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/syntax-highlighting/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/latex/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/latex/</loc>
   </url><url>
     <loc>https://aerosand.github.io/docs/guide/diagrams/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/diagrams/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/about/</loc>
-    <lastmod>2025-07-22T10:38:41+09:00</lastmod>
+    <lastmod>2025-07-22T11:50:14+09:00</lastmod>
   </url><url>
     <loc>https://aerosand.github.io/</loc>
     <lastmod>2025-07-22T01:13:02+09:00</lastmod>
@@ -59,8 +77,16 @@
     <loc>https://aerosand.github.io/docs/guide/shortcodes/callout/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/callout/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/callout/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/cards/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/cards/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/cards/</loc>
   </url><url>
     <loc>https://aerosand.github.io/categories/</loc>
   </url><url>
@@ -73,8 +99,14 @@
     <loc>https://aerosand.github.io/docs/guide/deploy-site/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/deploy-site/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/details/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/details/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/details/</loc>
   </url><url>
     <loc>https://aerosand.github.io/docs/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
@@ -82,11 +114,23 @@
     <loc>https://aerosand.github.io/docs/guide/shortcodes/filetree/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/filetree/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/filetree/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/icon/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/icon/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/icon/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/jupyter/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/jupyter/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/jupyter/</loc>
   </url><url>
     <loc>https://aerosand.github.io/news/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
@@ -94,13 +138,25 @@
     <loc>https://aerosand.github.io/docs/guide/shortcodes/others/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/others/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/others/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/showcase/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/steps/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
   </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/steps/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/steps/</loc>
+  </url><url>
     <loc>https://aerosand.github.io/docs/guide/shortcodes/tabs/</loc>
     <lastmod>2025-07-21T19:37:04+09:00</lastmod>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/1_ofsb/tabs/</loc>
+  </url><url>
+    <loc>https://aerosand.github.io/docs/openfoam-sharing/2_ofsp/tabs/</loc>
   </url>
 </urlset>
