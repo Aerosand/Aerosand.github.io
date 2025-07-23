@@ -11,23 +11,31 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>03_make – Aerosand</title>
-  <meta name="description" content="" /><link rel="canonical" href="https://aerosand.github.io/ofs/ofsp/03_make/" itemprop="url" />
+  <meta name="description" content=" Note
+上一篇讨论的编译过程虽然清晰，但是一步一步的执行十分繁琐" /><link rel="canonical" href="https://aerosand.github.io/ofs/ofsp/03_make/" itemprop="url" />
 
 <meta property="og:title" content="03_make" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="
+  Note
+
+  
+    上一篇讨论的编译过程虽然清晰，但是一步一步的执行十分繁琐" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aerosand.github.io/ofs/ofsp/03_make/" /><meta property="article:section" content="ofs" />
 <meta property="article:published_time" content="2025-07-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2025-07-23T00:00:00+00:00" />
 
   <meta itemprop="name" content="03_make">
-  <meta itemprop="description" content="Sharing &amp; discussions for numerical calculation, computational fluid dynamics and OpenFOAM.">
+  <meta itemprop="description" content="Note
+上一篇讨论的编译过程虽然清晰，但是一步一步的执行十分繁琐">
   <meta itemprop="datePublished" content="2025-07-23T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-07-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="200">
   <meta itemprop="keywords" content="Ofsp2026,OpenFOAM">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="03_make">
-  <meta name="twitter:description" content="Sharing &amp; discussions for numerical calculation, computational fluid dynamics and OpenFOAM.">
+  <meta name="twitter:description" content="Note
+上一篇讨论的编译过程虽然清晰，但是一步一步的执行十分繁琐">
 
     <link rel="preload" href="/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" as="style" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
     <link href="/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" rel="stylesheet" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
@@ -376,7 +384,16 @@
 
         <div class="content">
           <h1>03_make</h1>
-          
+          <div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200">
+  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Note</p>
+
+  <div class="hx-w-full hx-min-w-0 hx-leading-7">
+    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><p>上一篇讨论的编译过程虽然清晰，但是一步一步的执行十分繁琐</p></div>
+  </div>
+</div>
+<p>为了简化项目编译，以及兼顾理解编译细节，我们采用 make 工具来管理我们的开发项目。很多人也会使用 cmake 来构建项目，cmake 更加简洁高效，不过本质上也是基于 makefile 的。</p>
+<p>我们可以为项目提供 makefile 文件通用的描述所有执行步骤。这样只需要简单执行 makefile 文件就可以编译整个项目，大大方便调试运行。此外，上面项目的所有代码文件都放在一起，十分不方便，所以我们对代码进行分类管理。</p>
+
         </div>
         
     <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2025-07-23T00:00:00.000Z">July 23, 2025</time></div>

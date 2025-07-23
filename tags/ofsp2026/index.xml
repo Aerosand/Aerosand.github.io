@@ -47,12 +47,12 @@
 &lt;/blockquote&gt;
 &lt;p&gt;所以我们可以使用 OpenFOAM 来构建基于 C++ 的实现 CFD 等理论的求解器应用。&lt;/p&gt;
 &lt;h2&gt;3.路线&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3路线&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#3%e8%b7%af%e7%ba%bf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我们从简单的 C++ 程序实现开始，简单了解编译原理，通过 makefile 逐渐掌控我们的项目，过渡到了解 OpenFOAM 的 make 实现方式，然后认识 OpenFOAM 的基本程序，然后逐渐深入了解 OpenFOAM 的求解器应用细节。&lt;/p&gt;
+    &lt;a href=&#34;#3%e8%b7%af%e7%ba%bf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我们从简单的 C++ 程序实现开始，简单了解编译原理，通过 make 逐渐掌控我们的项目，过渡到了解 OpenFOAM 的 wmake 实现方式，然后认识 OpenFOAM 的基本程序，然后逐渐深入了解 OpenFOAM 的求解器应用细节。&lt;/p&gt;
 &lt;div class=&#34;steps hx-ml-4 hx-mb-12 ltr:hx-border-l rtl:hx-border-r hx-border-gray-200 ltr:hx-pl-6 rtl:hx-pr-6 dark:hx-border-neutral-800 [counter-reset:step]&#34;&gt;
 &lt;h3&gt;编译原理&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;编译原理&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;C++ 程序的编译&lt;/li&gt;
-&lt;li&gt;makefile 管理程序编译&lt;/li&gt;
+&lt;li&gt;make 管理程序编译&lt;/li&gt;
 &lt;li&gt;wmake 管理程序编译&lt;/li&gt;
 &lt;li&gt;OpenFOAM 应用构建&lt;/li&gt;
 &lt;/ol&gt;
@@ -644,7 +644,16 @@ Current time step is : 0.2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#3
       <description>
         
         
-        
+        &lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+  &lt;p class=&#34;hx-flex hx-items-center hx-font-medium&#34;&gt;&lt;svg height=16px class=&#34;hx-inline-block hx-align-middle hx-mr-2&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;Note&lt;/p&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;&lt;p&gt;上一篇讨论的编译过程虽然清晰，但是一步一步的执行十分繁琐&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;为了简化项目编译，以及兼顾理解编译细节，我们采用 make 工具来管理我们的开发项目。很多人也会使用 cmake 来构建项目，cmake 更加简洁高效，不过本质上也是基于 makefile 的。&lt;/p&gt;
+&lt;p&gt;我们可以为项目提供 makefile 文件通用的描述所有执行步骤。这样只需要简单执行 makefile 文件就可以编译整个项目，大大方便调试运行。此外，上面项目的所有代码文件都放在一起，十分不方便，所以我们对代码进行分类管理。&lt;/p&gt;
+
       </description>
     </item>
     
