@@ -498,7 +498,7 @@ code ofsp_021_helloWorld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;通过 vscode 打开项目后，可以使用 &lt;code&gt;ctrl + ~&lt;/code&gt; 唤出 vscode 的终端控制台，快捷进行命令操作。&lt;/p&gt;
-&lt;p&gt;终端输入命令新建项目下文件&lt;/p&gt;
+&lt;p&gt;终端输入命令新建项目下文件，并空白保存&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;code main.cpp Aerosand.cpp Aerosand.h&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
