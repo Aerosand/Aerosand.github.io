@@ -130,8 +130,9 @@
 &lt;/div&gt;
 &lt;p&gt;我们约定&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;userPath/&lt;/code&gt;：用户指定路径，该路径下再新建例如 &lt;code&gt;userPath/ofsp/&lt;/code&gt; 文件夹，&lt;code&gt;ofsp/&lt;/code&gt; 下再新建各个项目&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;userPath/&lt;/code&gt;：用户指定路径&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;该路径下再新建例如 &lt;code&gt;userPath/ofsp/&lt;/code&gt; 文件夹，&lt;code&gt;ofsp/&lt;/code&gt; 下再新建各个子项目&lt;/p&gt;
 &lt;p&gt;例如，&lt;/p&gt;
 &lt;p&gt;终端输入命令，新建总项目文件夹&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
