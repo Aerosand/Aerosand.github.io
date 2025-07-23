@@ -120,8 +120,8 @@
       <description>
         
         
-        &lt;h2&gt;1.开始&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1开始&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#1%e5%bc%80%e5%a7%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
+        &lt;h2&gt;1. 开始&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-开始&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%e5%bc%80%e5%a7%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-blue-200 hx-bg-blue-100 hx-text-blue-900 dark:hx-border-blue-200/30 dark:hx-bg-blue-900/30 dark:hx-text-blue-200&#34;&gt;
   &lt;p class=&#34;hx-flex hx-items-center hx-font-medium&#34;&gt;&lt;svg height=16px class=&#34;hx-inline-block hx-align-middle hx-mr-2&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;Note&lt;/p&gt;
 
   &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
@@ -132,8 +132,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;userPath/&lt;/code&gt;：用户指定路径，该路径下再新建例如 &lt;code&gt;userPath/ofsp/&lt;/code&gt; 文件夹，&lt;code&gt;ofsp/&lt;/code&gt; 下再新建各个项目&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;例如，新建总项目文件夹&lt;/p&gt;
-&lt;p&gt;终端输入命令&lt;/p&gt;
+&lt;p&gt;例如，&lt;/p&gt;
+&lt;p&gt;终端输入命令，新建总项目文件夹&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;mkdir /userPath/ofsp  &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
@@ -150,7 +150,7 @@
   &lt;p&gt;&lt;code&gt;ofsp&lt;/code&gt; 即 &lt;code&gt;OpenFoam sharing programming&lt;/code&gt; 的缩写&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我们可以将 &lt;code&gt;ofsp&lt;/code&gt; 设置为快捷命令，终端输入 &lt;code&gt;ofsp&lt;/code&gt; 后可以直接跳转到项目文件夹下。&lt;/p&gt;
-&lt;p&gt;终端输入命令打开 &lt;code&gt;bashrc&lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;终端输入命令，打开 &lt;code&gt;bashrc&lt;/code&gt; 文件&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;gedit ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
@@ -177,7 +177,7 @@
   &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;终端输入命令时使快捷命令生效&lt;/p&gt;
+&lt;p&gt;终端输入命令，使快捷命令生效&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;source ~/.bashrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
@@ -190,8 +190,9 @@
   &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2&gt;2.项目&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2项目&#34;&gt;&lt;/span&gt;
-    &lt;a href=&#34;#2%e9%a1%b9%e7%9b%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;通过终端新建本文子项目的文件夹&lt;/p&gt;
+&lt;h2&gt;2. 项目&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-项目&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%e9%a1%b9%e7%9b%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;通过终端新建本文子项目的文件夹&lt;/p&gt;
+&lt;p&gt;终端输入命令&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;ofsp
@@ -207,7 +208,7 @@ code ofsp_021_helloWorld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;通过 vscode 打开项目后，可以使用 &lt;code&gt;ctrl + ~&lt;/code&gt; 唤出 vscode 的终端控制台，快捷进行命令操作。&lt;/p&gt;
-&lt;p&gt;终端输入命令新建项目下文件，并空白保存&lt;/p&gt;
+&lt;p&gt;终端输入命令，新建项目下文件并空白保存&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;code main.cpp Aerosand.cpp Aerosand.h&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
@@ -220,7 +221,7 @@ code ofsp_021_helloWorld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
   &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;终端输入 &lt;code&gt;tree&lt;/code&gt; 命令查看文件树状结构，显示如下&lt;/p&gt;
+&lt;p&gt;终端输入 &lt;code&gt;tree&lt;/code&gt; 命令，查看文件树状结构&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;tree
@@ -245,7 +246,7 @@ code ofsp_021_helloWorld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;我们分别写入代码，内容如下&lt;/p&gt;
-&lt;p&gt;类的声明 &lt;code&gt;Aerosand.h&lt;/code&gt; 如下&lt;/p&gt;
+&lt;p&gt;类的声明 Class  &lt;code&gt;Aerosand.h&lt;/code&gt; 如下&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;Aerosand.h&lt;/div&gt;&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#pragma once
@@ -335,7 +336,35 @@ code ofsp_021_helloWorld&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;
 &lt;pre class=&#34;mermaid hx-mt-6&#34;&gt;
   flowchart LR
     预处理 --&amp;gt; 编译 --&amp;gt; 汇编 --&amp;gt; 链接
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;h2&gt;3. 预处理&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-预处理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e9%a2%84%e5%a4%84%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;mark style=&#34;background: #FFB86CA6;&#34;&gt;预处理 Preprocessing&lt;/mark&gt; 是编译过程的第一阶段，发生在生成目标代码之前。它由&lt;mark style=&#34;background: #FFB86CA6;&#34;&gt;预处理器 Preprocessor&lt;/mark&gt; 负责处理源代码中以 &lt;code&gt;#&lt;/code&gt; 开头的指令，这些指令也被称为&lt;strong&gt;预处理指令&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;比如，&lt;code&gt;#include&lt;/code&gt; 将提示把另一个文件的内容插入到当前位置。&lt;/p&gt;
+&lt;p&gt;在 Linux 系统下生成&lt;strong&gt;中间预处理输出文件&lt;/strong&gt;（后缀 &lt;code&gt;.i&lt;/code&gt; 文件）。&lt;/p&gt;
+&lt;p&gt;终端输入命令，执行预处理&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+
+&lt;div class=&#34;filename not-prose&#34; dir=&#34;auto&#34;&gt;terminal&lt;/div&gt;&lt;div&gt;&lt;pre&gt;&lt;code&gt;g&amp;#43;&amp;#43; -E Aerosand.cpp -o Aerosand.i  
+g&amp;#43;&amp;#43; -E main.cpp -o main.i&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+&lt;li&gt;g++ 的 &lt;code&gt;-E&lt;/code&gt; 标识指定编译器进行预处理&lt;/li&gt;
+&lt;li&gt;g++ 的 &lt;code&gt;-o&lt;/code&gt; （小写）标识指定编译器生成文件的名称&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;结果生成 &lt;code&gt;Aerosand.i&lt;/code&gt; 和 &lt;code&gt;main.i&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;后缀 &lt;code&gt;.i&lt;/code&gt; 表示 intermediate preprocessor output 中间预处理输出&lt;/p&gt;
+&lt;/blockquote&gt;
+
       </description>
     </item>
     
