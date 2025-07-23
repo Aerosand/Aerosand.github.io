@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aerosand – Example</title>
-    <link>http://localhost:1313/tags/example/</link>
+    <link>https://aerosand.github.io/tags/example/</link>
     <description>Recent content in Example on Aerosand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/example/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://aerosand.github.io/tags/example/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/news/markdown/</link>
+      <link>https://aerosand.github.io/news/markdown/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/news/markdown/</guid>
+      <guid>https://aerosand.github.io/news/markdown/</guid>
       <description>
         
         

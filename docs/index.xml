@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aerosand – Introduction</title>
-    <link>http://localhost:1313/docs/</link>
+    <link>https://aerosand.github.io/docs/</link>
     <description>Recent content in Introduction on Aerosand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://aerosand.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>getting-started</title>
-      <link>http://localhost:1313/docs/getting-started/</link>
+      <link>https://aerosand.github.io/docs/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docs/getting-started/</guid>
+      <guid>https://aerosand.github.io/docs/getting-started/</guid>
       <description>
         
         
@@ -308,10 +308,10 @@ For more options, check out &lt;a href=&#34;../guide/deploy-site&#34; &gt;Deploy
     
     <item>
       <title>01_introduction</title>
-      <link>http://localhost:1313/docs/ofsp/ofsp2026_01-introduction/</link>
+      <link>https://aerosand.github.io/docs/ofsp/ofsp2026_01-introduction/</link>
       <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docs/ofsp/ofsp2026_01-introduction/</guid>
+      <guid>https://aerosand.github.io/docs/ofsp/ofsp2026_01-introduction/</guid>
       <description>
         
         
