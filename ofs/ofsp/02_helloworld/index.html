@@ -31,7 +31,7 @@
 对于 OpenFOAM 来说，不管是求解器还是算例，放在任何一个文件夹都可以。放在 $FOAM_RUN 路径下也是为了方便管理。">
   <meta itemprop="datePublished" content="2025-07-23T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-07-23T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1960">
+  <meta itemprop="wordCount" content="2430">
   <meta itemprop="keywords" content="Ofsp2026,OpenFOAM">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="02_helloWorld">
@@ -771,7 +771,7 @@ g&#43;&#43; -c main.s -o main.o</code></pre></div><div class="hextra-code-copy-b
 <p>后缀 <code>.o</code>（小写）表示<strong>目标文件 object file</strong>。</p>
 <h2>6. 链接<span class="hx-absolute -hx-mt-20" id="6-链接"></span>
     <a href="#6-%e9%93%be%e6%8e%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><strong>链接 Link</strong> 是<strong>链接器 Linker</strong> 把多个目标文件和系统库文件组合成一个完整可执行程序的过程。</p>
-<p>目标文件虽然包含机器指令，但仍然不是完整程序，链接器将找到其中函数调用涉及到“外部符号”的引用。</p>
+<p>目标文件虽然包含机器指令，但仍然不是完整程序，链接器将找到其中函数调用涉及到“外部符号”的引用，生成可执行的二进制文件。</p>
 <p>终端输入命令，执行链接</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
@@ -859,7 +859,91 @@ Current time step is : 0.2</code></pre></div><div class="hextra-code-copy-btn-co
   </button>
 </div>
 </div>
+<p>使用 <code>echo</code> 命令查看原本动态库链接路径，可以发现并不是项目本地路径。</p>
+<p>终端输入命令</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
+<div class="filename not-prose" dir="auto">terminal</div><div><pre><code>echo $LD_LIBRARY_PATH</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>临时指定动态库路径为当前文件夹</p>
+<p>终端输入命令</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div class="filename not-prose" dir="auto">terminal</div><div><pre><code>export LD_LIBRARY_PATH=.
+echo $LD_LIBRARY_PATH</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-green-200 hx-bg-green-100 hx-text-green-900 dark:hx-border-green-200/30 dark:hx-bg-green-900/30 dark:hx-text-green-200">
+  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Tip</p>
+
+  <div class="hx-w-full hx-min-w-0 hx-leading-7">
+    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><p>不要担心，临时指定不影响 OpenFOAM 动态库路径的环境配置</p></div>
+  </div>
+</div>
+<p>终端输入命令，链接动态库生成可执行文件</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div class="filename not-prose" dir="auto">terminal</div><div><pre><code>g&#43;&#43; main.o -L. -lAerosand -o main</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-8">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-green-200 hx-bg-green-100 hx-text-green-900 dark:hx-border-green-200/30 dark:hx-bg-green-900/30 dark:hx-text-green-200">
+  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Tip</p>
+
+  <div class="hx-w-full hx-min-w-0 hx-leading-7">
+    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><ul>
+<li>g++ 的 <code>-L</code> 标识指定的动态库的路径， 使用 <code>-L.</code> 表示动态库在当前路径</li>
+<li>g++ 的 <code>-l</code> 标识指定的动态库的名称，使用时省略动态库的 <code>lib</code> 字段</li>
+<li>如前所述，可执行程序的后缀在这里并不重要</li>
+</ul></div>
+  </div>
+</div>
+<p>在 Linux 系统下生成一个可执行程序</p>
+<ul>
+<li><code>main</code></li>
+</ul>
+<div class="hx-overflow-x-auto hx-mt-6 hx-flex hx-flex-col hx-rounded-lg hx-border hx-py-4 hx-px-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-green-200 hx-bg-green-100 hx-text-green-900 dark:hx-border-green-200/30 dark:hx-bg-green-900/30 dark:hx-text-green-200">
+  <p class="hx-flex hx-items-center hx-font-medium"><svg height=16px class="hx-inline-block hx-align-middle hx-mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Tip</p>
+
+  <div class="hx-w-full hx-min-w-0 hx-leading-7">
+    <div class="hx-mt-6 hx-leading-7 first:hx-mt-0"><ul>
+<li>前文指定的动态库路径是临时的，如果重启计算机，想要再次运行 <code>main</code> 程序，必须要再次指定动态库路径</li>
+<li>无论是把新开发库放在本项目路径下，或是其他任何路径下，任何位置的项目都可以链接使用这个动态库，只要指定正确的链接路径即可。这也是动态库“相对独立”“自由链接”的意义所在</li>
+</ul></div>
+  </div>
+</div>
+<p>总结整个过程如下</p>
+<pre class="mermaid hx-mt-6">
+  flowchart TD
+
+main.cpp --&gt;|预处理| main.i --&gt;|编译| main.s --&gt;|汇编| main.o --&gt; 等待链接
+Aerosand.cpp --&gt;|预处理| Aerosand.i --&gt;|编译| Aerosand.s 
+--&gt;|汇编| Aerosand.o --&gt;|动态库| Aerosand.so
+
+等待链接 --&gt;|链接| main
+Aerosand.so --&gt;|链接| main
+</pre>
         </div>
         
     <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2025-07-23T00:00:00.000Z">July 23, 2025</time></div>
