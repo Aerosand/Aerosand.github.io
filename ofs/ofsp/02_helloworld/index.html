@@ -31,7 +31,7 @@
 对于 OpenFOAM 来说，不管是求解器还是算例，放在任何一个文件夹都可以。放在 $FOAM_RUN 路径下也是为了方便管理。">
   <meta itemprop="datePublished" content="2025-07-23T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-07-23T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2487">
+  <meta itemprop="wordCount" content="2488">
   <meta itemprop="keywords" content="Ofsp2026,OpenFOAM">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="02_helloWorld">
@@ -539,7 +539,7 @@
 </div>
 </div>
 <h2>2. 项目<span class="hx-absolute -hx-mt-20" id="2-项目"></span>
-    <a href="#2-%e9%a1%b9%e7%9b%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>通过终端新建本文子项目的文件夹</p>
+    <a href="#2-%e9%a1%b9%e7%9b%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>通过终端新建本文的子项目的文件夹</p>
 <p>终端输入命令</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
@@ -597,7 +597,7 @@ code ofsp_021_helloWorld</code></pre></div><div class="hextra-code-copy-btn-cont
 <p>类的声明 Class  <code>Aerosand.h</code> 如下</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
-<div class="filename not-prose" dir="auto">Aerosand.h</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
+<div class="filename not-prose" dir="auto">/Aerosand.h</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#pragma once
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Aerosand</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -628,7 +628,7 @@ code ofsp_021_helloWorld</code></pre></div><div class="hextra-code-copy-btn-cont
 <p>类的定义 <code>Aerosand.cpp</code> 如下</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
-<div class="filename not-prose" dir="auto">Aerosand.cpp</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Aerosand.h&#34;</span><span class="cp">
+<div class="filename not-prose" dir="auto">/Aerosand.cpp</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Aerosand.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Aerosand</span><span class="o">::</span><span class="n">setLocalTime</span><span class="p">(</span><span class="kt">double</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">localTime_</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
@@ -649,7 +649,7 @@ code ofsp_021_helloWorld</code></pre></div><div class="hextra-code-copy-btn-cont
 <p>主源码 <code>main.cpp</code> 如下</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
-<div class="filename not-prose" dir="auto">main.cpp</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<div class="filename not-prose" dir="auto">/main.cpp</div><div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;Aerosand.h&#34;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
